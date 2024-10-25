@@ -67,4 +67,12 @@ whiskers:
     #zenEditBookmarkPanelFaviconContainer {
       background: #{{ crust.hex }} !important;
     }
+
+    toolbar .toolbarbutton-1 {
+        &:not([disabled]) {
+            &:is([open], [checked]) > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack){
+                fill: #{{ crust.hex }};
+            }
+        }
+    }
 }

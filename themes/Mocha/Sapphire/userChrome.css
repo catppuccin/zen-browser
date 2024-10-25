@@ -57,4 +57,12 @@
     #zenEditBookmarkPanelFaviconContainer {
       background: #11111b !important;
     }
+
+    toolbar .toolbarbutton-1 {
+        &:not([disabled]) {
+            &:is([open], [checked]) > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack){
+                fill: #11111b;
+            }
+        }
+    }
 }
