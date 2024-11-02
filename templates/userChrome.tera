@@ -33,10 +33,11 @@ whiskers:
         --toolbar-bgcolor: #{{ surface0.hex }} !important;
         --newtab-background-color: #{{ base.hex }} !important;
         --zen-themed-toolbar-bg: #{{ mantle.hex }} !important;
+        --zen-main-browser-background: #{{ mantle.hex }} !important;
     }
 
     #permissions-granted-icon{
-      color: #{{ mantle.hex }} !important;
+        color: #{{ mantle.hex }} !important;
     }
 
     .sidebar-placesTree {
