@@ -27,11 +27,11 @@
     }
 
     #permissions-granted-icon{
-      color: #292c3c !important;
+        color: #292c3c !important;
     }
 
     .sidebar-placesTree {
-        background-color: #414559 !important;
+        background-color: #303446 !important;
     }
 
     #zen-workspaces-button {
@@ -56,7 +56,7 @@
     }
 
     #zenEditBookmarkPanelFaviconContainer {
-      background: #232634 !important;
+        background: #232634 !important;
     }
 
     toolbar .toolbarbutton-1 {

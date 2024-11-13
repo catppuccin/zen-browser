@@ -41,7 +41,7 @@ whiskers:
     }
 
     .sidebar-placesTree {
-        background-color: #{{ surface0.hex }} !important;
+        background-color: #{{ base.hex }} !important;
     }
 
     #zen-workspaces-button {
@@ -66,7 +66,7 @@ whiskers:
     }
 
     #zenEditBookmarkPanelFaviconContainer {
-      background: #{{ crust.hex }} !important;
+        background: #{{ crust.hex }} !important;
     }
 
     toolbar .toolbarbutton-1 {
