@@ -1,10 +1,10 @@
 ---
 whiskers:
-    version: 2.5.1
-    matrix:
-        - accent
-        - flavor
-    filename: "themes/{{ flavor.identifier | capitalize}}/{{ accent | capitalize }}/userContent.css"
+  version: 2.5.1
+  matrix:
+    - accent
+    - flavor
+  filename: "themes/{{ flavor.identifier | capitalize}}/{{ accent | capitalize }}/userContent.css"
 ---
 {%- set palette = flavor.colors -%}
 
@@ -18,7 +18,7 @@ whiskers:
       --in-content-page-color: #{{ text.hex }} !important;
       --color-accent-primary: #{{ palette[accent].hex }} !important;
       --color-accent-primary-hover: {{ palette[accent] | add(lightness=5) | css_rgb }} !important;
-      --color-accent-primary-active: {{ palette[accent] | add(hue=15) | css_rgb}} !important; 
+      --color-accent-primary-active: {{ palette[accent] | add(hue=15) | css_rgb}} !important;
       background-color: #{{ base.hex }} !important;
       --in-content-page-background: #{{ base.hex }} !important;
     }
@@ -131,37 +131,37 @@ whiskers:
     --identity-tab-color: #8aadf4 !important;
     --identity-icon-color: #8aadf4 !important;
   }
-  
+
   .identity-color-turquoise {
     --identity-tab-color: #8bd5ca !important;
     --identity-icon-color: #8bd5ca !important;
   }
-  
+
   .identity-color-green {
     --identity-tab-color: #a6da95 !important;
     --identity-icon-color: #a6da95 !important;
   }
-  
+
   .identity-color-yellow {
     --identity-tab-color: #eed49f !important;
     --identity-icon-color: #eed49f !important;
   }
-  
+
   .identity-color-orange {
     --identity-tab-color: #f5a97f !important;
     --identity-icon-color: #f5a97f !important;
   }
-  
+
   .identity-color-red {
     --identity-tab-color: #ed8796 !important;
     --identity-icon-color: #ed8796 !important;
   }
-  
+
   .identity-color-pink {
     --identity-tab-color: #f5bde6 !important;
     --identity-icon-color: #f5bde6 !important;
   }
-  
+
   .identity-color-purple {
     --identity-tab-color: #c6a0f6 !important;
     --identity-icon-color: #c6a0f6 !important;

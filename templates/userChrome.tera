@@ -1,10 +1,10 @@
 ---
 whiskers:
-    version: 2.5.1
-    matrix:
-        - accent
-        - flavor
-    filename: "themes/{{ flavor.identifier | capitalize}}/{{ accent | capitalize }}/userChrome.css"
+  version: 2.5.1
+  matrix:
+    - accent
+    - flavor
+  filename: "themes/{{ flavor.identifier | capitalize}}/{{ accent | capitalize }}/userChrome.css"
 ---
 {%- set palette = flavor.colors -%}
 
@@ -12,108 +12,108 @@ whiskers:
 
 @media (prefers-color-scheme: {{ if(cond=flavor.dark, t="dark", f="light") }}) {
 
-    :root {
-        --zen-colors-primary: #{{ surface0.hex }} !important;
-        --zen-primary-color: #{{ palette[accent].hex }} !important;
-        --zen-colors-secondary: #{{ surface0.hex }} !important;
-        --zen-colors-tertiary: #{{ mantle.hex }} !important;
-        --zen-colors-border: #{{ palette[accent].hex }} !important;
-        --toolbarbutton-icon-fill: #{{ palette[accent].hex }} !important;
-        --lwt-text-color: #{{ text.hex }} !important;
-        --toolbar-field-color: #{{ text.hex }} !important;
-        --tab-selected-textcolor: {{ palette[accent] | mix(color=text, amount=0.5) | css_rgb}} !important;
-        --toolbar-field-focus-color: #{{ text.hex }} !important;
-        --toolbar-color: #{{ text.hex }} !important;
-        --newtab-text-primary-color: #{{ text.hex }} !important;
-        --arrowpanel-color: #{{ text.hex }} !important;
-        --arrowpanel-background: #{{ base.hex }} !important;
-        --sidebar-text-color: #{{ text.hex }} !important;
-        --lwt-sidebar-text-color: #{{ text.hex }} !important;
-        --lwt-sidebar-background-color: #{{ crust.hex }} !important;
-        --toolbar-bgcolor: #{{ surface0.hex }} !important;
-        --newtab-background-color: #{{ base.hex }} !important;
-        --zen-themed-toolbar-bg: #{{ mantle.hex }} !important;
-        --zen-main-browser-background: #{{ mantle.hex }} !important;
-    }
+  :root {
+    --zen-colors-primary: #{{ surface0.hex }} !important;
+    --zen-primary-color: #{{ palette[accent].hex }} !important;
+    --zen-colors-secondary: #{{ surface0.hex }} !important;
+    --zen-colors-tertiary: #{{ mantle.hex }} !important;
+    --zen-colors-border: #{{ palette[accent].hex }} !important;
+    --toolbarbutton-icon-fill: #{{ palette[accent].hex }} !important;
+    --lwt-text-color: #{{ text.hex }} !important;
+    --toolbar-field-color: #{{ text.hex }} !important;
+    --tab-selected-textcolor: {{ palette[accent] | mix(color=text, amount=0.5) | css_rgb}} !important;
+    --toolbar-field-focus-color: #{{ text.hex }} !important;
+    --toolbar-color: #{{ text.hex }} !important;
+    --newtab-text-primary-color: #{{ text.hex }} !important;
+    --arrowpanel-color: #{{ text.hex }} !important;
+    --arrowpanel-background: #{{ base.hex }} !important;
+    --sidebar-text-color: #{{ text.hex }} !important;
+    --lwt-sidebar-text-color: #{{ text.hex }} !important;
+    --lwt-sidebar-background-color: #{{ crust.hex }} !important;
+    --toolbar-bgcolor: #{{ surface0.hex }} !important;
+    --newtab-background-color: #{{ base.hex }} !important;
+    --zen-themed-toolbar-bg: #{{ mantle.hex }} !important;
+    --zen-main-browser-background: #{{ mantle.hex }} !important;
+  }
 
-    #permissions-granted-icon{
-        color: #{{ mantle.hex }} !important;
-    }
+  #permissions-granted-icon{
+    color: #{{ mantle.hex }} !important;
+  }
 
-    .sidebar-placesTree {
-        background-color: #{{ base.hex }} !important;
-    }
+  .sidebar-placesTree {
+    background-color: #{{ base.hex }} !important;
+  }
 
-    #zen-workspaces-button {
-        background-color: #{{ base.hex }} !important;
-    }
+  #zen-workspaces-button {
+    background-color: #{{ base.hex }} !important;
+  }
 
-    #TabsToolbar {
-        background-color: #{{ mantle.hex }} !important;
-    }
+  #TabsToolbar {
+    background-color: #{{ mantle.hex }} !important;
+  }
 
-    #urlbar-background {
-        background-color: #{{ base.hex }} !important;
-    }
+  #urlbar-background {
+    background-color: #{{ base.hex }} !important;
+  }
 
-    .content-shortcuts {
-        background-color: #{{ base.hex }} !important;
-        border-color: #{{ palette[accent].hex }} !important;
-    }
+  .content-shortcuts {
+    background-color: #{{ base.hex }} !important;
+    border-color: #{{ palette[accent].hex }} !important;
+  }
 
-    .urlbarView-url {
-        color: #{{ palette[accent].hex }} !important;
-    }
+  .urlbarView-url {
+    color: #{{ palette[accent].hex }} !important;
+  }
 
-    #zenEditBookmarkPanelFaviconContainer {
-        background: #{{ crust.hex }} !important;
-    }
+  #zenEditBookmarkPanelFaviconContainer {
+    background: #{{ crust.hex }} !important;
+  }
 
-    toolbar .toolbarbutton-1 {
-        &:not([disabled]) {
-            &:is([open], [checked]) > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack){
-                fill: #{{ crust.hex }};
-            }
-        }
+  toolbar .toolbarbutton-1 {
+    &:not([disabled]) {
+      &:is([open], [checked]) > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack){
+        fill: #{{ crust.hex }};
+      }
     }
+  }
 
-    .identity-color-blue {
-        --identity-tab-color: #{{ blue.hex }} !important;
-        --identity-icon-color: #{{ blue.hex }} !important;
-    }
-    
-    .identity-color-turquoise {
-        --identity-tab-color: #{{ teal.hex }} !important;
-        --identity-icon-color: #{{ teal.hex }} !important;
-    }
-    
-    .identity-color-green {
-        --identity-tab-color: #{{ green.hex }} !important;
-        --identity-icon-color: #{{ green.hex }} !important;
-    }
-    
-    .identity-color-yellow {
-        --identity-tab-color: #{{ yellow.hex }} !important;
-        --identity-icon-color: #{{ yellow.hex }} !important;
-    }
-    
-    .identity-color-orange {
-        --identity-tab-color: #{{ peach.hex }} !important;
-        --identity-icon-color: #{{ peach.hex }} !important;
-    }
-    
-    .identity-color-red {
-        --identity-tab-color: #{{ red.hex }} !important;
-        --identity-icon-color: #{{ red.hex }} !important;
-    }
-    
-    .identity-color-pink {
-        --identity-tab-color: #{{ pink.hex }} !important;
-        --identity-icon-color: #{{ pink.hex }} !important;
-    }
-    
-    .identity-color-purple {
-        --identity-tab-color: #{{ mauve.hex }} !important;
-        --identity-icon-color: #{{ mauve.hex }} !important;
-    }
+  .identity-color-blue {
+    --identity-tab-color: #{{ blue.hex }} !important;
+    --identity-icon-color: #{{ blue.hex }} !important;
+  }
+
+  .identity-color-turquoise {
+    --identity-tab-color: #{{ teal.hex }} !important;
+    --identity-icon-color: #{{ teal.hex }} !important;
+  }
+
+  .identity-color-green {
+    --identity-tab-color: #{{ green.hex }} !important;
+    --identity-icon-color: #{{ green.hex }} !important;
+  }
+
+  .identity-color-yellow {
+    --identity-tab-color: #{{ yellow.hex }} !important;
+    --identity-icon-color: #{{ yellow.hex }} !important;
+  }
+
+  .identity-color-orange {
+    --identity-tab-color: #{{ peach.hex }} !important;
+    --identity-icon-color: #{{ peach.hex }} !important;
+  }
+
+  .identity-color-red {
+    --identity-tab-color: #{{ red.hex }} !important;
+    --identity-icon-color: #{{ red.hex }} !important;
+  }
+
+  .identity-color-pink {
+    --identity-tab-color: #{{ pink.hex }} !important;
+    --identity-icon-color: #{{ pink.hex }} !important;
+  }
+
+  .identity-color-purple {
+    --identity-tab-color: #{{ mauve.hex }} !important;
+    --identity-icon-color: #{{ mauve.hex }} !important;
+  }
 }

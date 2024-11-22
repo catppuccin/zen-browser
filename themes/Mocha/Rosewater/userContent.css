@@ -8,7 +8,7 @@
       --in-content-page-color: #cdd6f4 !important;
       --color-accent-primary: #f5e0dc !important;
       --color-accent-primary-hover: rgb(251, 243, 241) !important;
-      --color-accent-primary-active: rgb(245, 231, 221) !important; 
+      --color-accent-primary-active: rgb(245, 231, 221) !important;
       background-color: #1e1e2e !important;
       --in-content-page-background: #1e1e2e !important;
     }
@@ -121,37 +121,37 @@
     --identity-tab-color: #8aadf4 !important;
     --identity-icon-color: #8aadf4 !important;
   }
-  
+
   .identity-color-turquoise {
     --identity-tab-color: #8bd5ca !important;
     --identity-icon-color: #8bd5ca !important;
   }
-  
+
   .identity-color-green {
     --identity-tab-color: #a6da95 !important;
     --identity-icon-color: #a6da95 !important;
   }
-  
+
   .identity-color-yellow {
     --identity-tab-color: #eed49f !important;
     --identity-icon-color: #eed49f !important;
   }
-  
+
   .identity-color-orange {
     --identity-tab-color: #f5a97f !important;
     --identity-icon-color: #f5a97f !important;
   }
-  
+
   .identity-color-red {
     --identity-tab-color: #ed8796 !important;
     --identity-icon-color: #ed8796 !important;
   }
-  
+
   .identity-color-pink {
     --identity-tab-color: #f5bde6 !important;
     --identity-icon-color: #f5bde6 !important;
   }
-  
+
   .identity-color-purple {
     --identity-tab-color: #c6a0f6 !important;
     --identity-icon-color: #c6a0f6 !important;
