@@ -116,5 +116,4 @@ whiskers:
         --identity-tab-color: #{{ mauve.hex }} !important;
         --identity-icon-color: #{{ mauve.hex }} !important;
     }
-
 }
