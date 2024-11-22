@@ -95,6 +95,46 @@ whiskers:
     .main-content {
       background-color: #{{ crust.hex }} !important;
     }
+
+    .identity-color-blue {
+      --identity-tab-color: #8aadf4 !important;
+      --identity-icon-color: #8aadf4 !important;
+    }
+
+    .identity-color-turquoise {
+      --identity-tab-color: #8bd5ca !important;
+      --identity-icon-color: #8bd5ca !important;
+    }
+
+    .identity-color-green {
+      --identity-tab-color: #a6da95 !important;
+      --identity-icon-color: #a6da95 !important;
+    }
+
+    .identity-color-yellow {
+      --identity-tab-color: #eed49f !important;
+      --identity-icon-color: #eed49f !important;
+    }
+
+    .identity-color-orange {
+      --identity-tab-color: #f5a97f !important;
+      --identity-icon-color: #f5a97f !important;
+    }
+
+    .identity-color-red {
+      --identity-tab-color: #ed8796 !important;
+      --identity-icon-color: #ed8796 !important;
+    }
+
+    .identity-color-pink {
+      --identity-tab-color: #f5bde6 !important;
+      --identity-icon-color: #f5bde6 !important;
+    }
+
+    .identity-color-purple {
+      --identity-tab-color: #c6a0f6 !important;
+      --identity-icon-color: #c6a0f6 !important;
+    }
   }
 
   /* Variables and styles specific to about:addons */
@@ -124,46 +164,5 @@ whiskers:
     .card {
       background-color: #{{ surface0.hex }} !important;
     }
-  }
-
-  /* Variables and styles specific to multi-account containers */
-  .identity-color-blue {
-    --identity-tab-color: #8aadf4 !important;
-    --identity-icon-color: #8aadf4 !important;
-  }
-
-  .identity-color-turquoise {
-    --identity-tab-color: #8bd5ca !important;
-    --identity-icon-color: #8bd5ca !important;
-  }
-
-  .identity-color-green {
-    --identity-tab-color: #a6da95 !important;
-    --identity-icon-color: #a6da95 !important;
-  }
-
-  .identity-color-yellow {
-    --identity-tab-color: #eed49f !important;
-    --identity-icon-color: #eed49f !important;
-  }
-
-  .identity-color-orange {
-    --identity-tab-color: #f5a97f !important;
-    --identity-icon-color: #f5a97f !important;
-  }
-
-  .identity-color-red {
-    --identity-tab-color: #ed8796 !important;
-    --identity-icon-color: #ed8796 !important;
-  }
-
-  .identity-color-pink {
-    --identity-tab-color: #f5bde6 !important;
-    --identity-icon-color: #f5bde6 !important;
-  }
-
-  .identity-color-purple {
-    --identity-tab-color: #c6a0f6 !important;
-    --identity-icon-color: #c6a0f6 !important;
   }
 }
