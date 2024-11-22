@@ -66,4 +66,45 @@
             }
         }
     }
+
+    .identity-color-blue {
+        --identity-tab-color: #89b4fa;
+        --identity-icon-color: #89b4fa;
+    }
+    
+    .identity-color-turquoise {
+        --identity-tab-color: #94e2d5;
+        --identity-icon-color: #94e2d5;
+    }
+    
+    .identity-color-green {
+        --identity-tab-color: #a6e3a1;
+        --identity-icon-color: #a6e3a1;
+    }
+    
+    .identity-color-yellow {
+        --identity-tab-color: #f9e2af;
+        --identity-icon-color: #f9e2af;
+    }
+    
+    .identity-color-orange {
+        --identity-tab-color: #fab387;
+        --identity-icon-color: #fab387;
+    }
+    
+    .identity-color-red {
+        --identity-tab-color: #f38ba8;
+        --identity-icon-color: #f38ba8;
+    }
+    
+    .identity-color-pink {
+        --identity-tab-color: #f5c2e7;
+        --identity-icon-color: #f5c2e7;
+    }
+    
+    .identity-color-purple {
+        --identity-tab-color: #cba6f7;
+        --identity-icon-color: #cba6f7;
+    }
+
 }

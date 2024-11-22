@@ -76,4 +76,45 @@ whiskers:
             }
         }
     }
+
+    .identity-color-blue {
+        --identity-tab-color: #{{ blue.hex }};
+        --identity-icon-color: #{{ blue.hex }};
+    }
+    
+    .identity-color-turquoise {
+        --identity-tab-color: #{{ teal.hex }};
+        --identity-icon-color: #{{ teal.hex }};
+    }
+    
+    .identity-color-green {
+        --identity-tab-color: #{{ green.hex }};
+        --identity-icon-color: #{{ green.hex }};
+    }
+    
+    .identity-color-yellow {
+        --identity-tab-color: #{{ yellow.hex }};
+        --identity-icon-color: #{{ yellow.hex }};
+    }
+    
+    .identity-color-orange {
+        --identity-tab-color: #{{ peach.hex }};
+        --identity-icon-color: #{{ peach.hex }};
+    }
+    
+    .identity-color-red {
+        --identity-tab-color: #{{ red.hex }};
+        --identity-icon-color: #{{ red.hex }};
+    }
+    
+    .identity-color-pink {
+        --identity-tab-color: #{{ pink.hex }};
+        --identity-icon-color: #{{ pink.hex }};
+    }
+    
+    .identity-color-purple {
+        --identity-tab-color: #{{ mauve.hex }};
+        --identity-icon-color: #{{ mauve.hex }};
+    }
+
 }
