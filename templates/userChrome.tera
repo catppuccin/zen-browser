@@ -78,43 +78,43 @@ whiskers:
     }
 
     .identity-color-blue {
-        --identity-tab-color: #{{ blue.hex }};
-        --identity-icon-color: #{{ blue.hex }};
+        --identity-tab-color: #{{ blue.hex }} !important;
+        --identity-icon-color: #{{ blue.hex }} !important;
     }
     
     .identity-color-turquoise {
-        --identity-tab-color: #{{ teal.hex }};
-        --identity-icon-color: #{{ teal.hex }};
+        --identity-tab-color: #{{ teal.hex }} !important;
+        --identity-icon-color: #{{ teal.hex }} !important;
     }
     
     .identity-color-green {
-        --identity-tab-color: #{{ green.hex }};
-        --identity-icon-color: #{{ green.hex }};
+        --identity-tab-color: #{{ green.hex }} !important;
+        --identity-icon-color: #{{ green.hex }} !important;
     }
     
     .identity-color-yellow {
-        --identity-tab-color: #{{ yellow.hex }};
-        --identity-icon-color: #{{ yellow.hex }};
+        --identity-tab-color: #{{ yellow.hex }} !important;
+        --identity-icon-color: #{{ yellow.hex }} !important;
     }
     
     .identity-color-orange {
-        --identity-tab-color: #{{ peach.hex }};
-        --identity-icon-color: #{{ peach.hex }};
+        --identity-tab-color: #{{ peach.hex }} !important;
+        --identity-icon-color: #{{ peach.hex }} !important;
     }
     
     .identity-color-red {
-        --identity-tab-color: #{{ red.hex }};
-        --identity-icon-color: #{{ red.hex }};
+        --identity-tab-color: #{{ red.hex }} !important;
+        --identity-icon-color: #{{ red.hex }} !important;
     }
     
     .identity-color-pink {
-        --identity-tab-color: #{{ pink.hex }};
-        --identity-icon-color: #{{ pink.hex }};
+        --identity-tab-color: #{{ pink.hex }} !important;
+        --identity-icon-color: #{{ pink.hex }} !important;
     }
     
     .identity-color-purple {
-        --identity-tab-color: #{{ mauve.hex }};
-        --identity-icon-color: #{{ mauve.hex }};
+        --identity-tab-color: #{{ mauve.hex }} !important;
+        --identity-icon-color: #{{ mauve.hex }} !important;
     }
 
 }
