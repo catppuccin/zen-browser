@@ -34,6 +34,7 @@ whiskers:
     --newtab-background-color: #{{ base.hex }} !important;
     --zen-themed-toolbar-bg: #{{ mantle.hex }} !important;
     --zen-main-browser-background: #{{ mantle.hex }} !important;
+    --toolbox-bgcolor-inactive: #{{ mantle.hex }} !important;
   }
 
   #permissions-granted-icon{
