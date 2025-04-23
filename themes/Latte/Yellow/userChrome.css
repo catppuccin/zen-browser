@@ -24,6 +24,7 @@
     --newtab-background-color: #eff1f5 !important;
     --zen-themed-toolbar-bg: #e6e9ef !important;
     --zen-main-browser-background: #e6e9ef !important;
+    --toolbox-bgcolor-inactive: #e6e9ef !important;
   }
 
   #permissions-granted-icon{
