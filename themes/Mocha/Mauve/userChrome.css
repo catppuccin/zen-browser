@@ -26,7 +26,9 @@
     --zen-main-browser-background: #181825 !important;
     --toolbox-bgcolor-inactive: #181825 !important;
   }
-
+#zen-current-workspace-indicator-container {
+    display: none !important;
+}
   #permissions-granted-icon{
     color: #181825 !important;
   }
