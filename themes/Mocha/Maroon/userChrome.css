@@ -1,7 +1,6 @@
 /* Catppuccin Mocha Maroon userChrome.css*/
 
 @media (prefers-color-scheme: dark) {
-
   :root {
     --zen-colors-primary: #313244 !important;
     --zen-primary-color: #eba0ac !important;
@@ -27,7 +26,7 @@
     --toolbox-bgcolor-inactive: #181825 !important;
   }
 
-  #permissions-granted-icon{
+  #permissions-granted-icon {
     color: #181825 !important;
   }
 
@@ -60,9 +59,22 @@
     background: #11111b !important;
   }
 
+  #zen-media-controls-toolbar {
+    & #zen-media-progress-bar {
+      &::-moz-range-track {
+        background: var(--zen-colors-secondary) !important;
+      }
+    }
+  }
+
   toolbar .toolbarbutton-1 {
     &:not([disabled]) {
-      &:is([open], [checked]) > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack){
+      &:is([open], [checked])
+        > :is(
+          .toolbarbutton-icon,
+          .toolbarbutton-text,
+          .toolbarbutton-badge-stack
+        ) {
         fill: #11111b;
       }
     }
