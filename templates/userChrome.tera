@@ -11,7 +11,6 @@ whiskers:
 /* Catppuccin {{flavor.identifier | capitalize}} {{accent | capitalize}} userChrome.css*/
 
 @media (prefers-color-scheme: {{ if(cond=flavor.dark, t="dark", f="light") }}) {
-
   :root {
     --zen-colors-primary: #{{ surface0.hex }} !important;
     --zen-primary-color: #{{ palette[accent].hex }} !important;
@@ -70,9 +69,22 @@ whiskers:
     background: #{{ crust.hex }} !important;
   }
 
+  #zen-media-controls-toolbar {
+    & #zen-media-progress-bar {
+      &::-moz-range-track {
+        background: #{{ surface0.hex }} !important;
+      }
+    }
+  }
+
   toolbar .toolbarbutton-1 {
     &:not([disabled]) {
-      &:is([open], [checked]) > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack){
+      &:is([open], [checked])
+        > :is(
+          .toolbarbutton-icon,
+          .toolbarbutton-text,
+          .toolbarbutton-badge-stack
+        ) {
         fill: #{{ crust.hex }};
       }
     }

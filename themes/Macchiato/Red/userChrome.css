@@ -1,7 +1,6 @@
 /* Catppuccin Macchiato Red userChrome.css*/
 
 @media (prefers-color-scheme: dark) {
-
   :root {
     --zen-colors-primary: #363a4f !important;
     --zen-primary-color: #ed8796 !important;
@@ -60,9 +59,22 @@
     background: #181926 !important;
   }
 
+  #zen-media-controls-toolbar {
+    & #zen-media-progress-bar {
+      &::-moz-range-track {
+        background: #363a4f !important;
+      }
+    }
+  }
+
   toolbar .toolbarbutton-1 {
     &:not([disabled]) {
-      &:is([open], [checked]) > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack){
+      &:is([open], [checked])
+        > :is(
+          .toolbarbutton-icon,
+          .toolbarbutton-text,
+          .toolbarbutton-badge-stack
+        ) {
         fill: #181926;
       }
     }

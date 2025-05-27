@@ -1,7 +1,6 @@
 /* Catppuccin Latte Flamingo userChrome.css*/
 
 @media (prefers-color-scheme: light) {
-
   :root {
     --zen-colors-primary: #ccd0da !important;
     --zen-primary-color: #dd7878 !important;
@@ -60,9 +59,22 @@
     background: #dce0e8 !important;
   }
 
+  #zen-media-controls-toolbar {
+    & #zen-media-progress-bar {
+      &::-moz-range-track {
+        background: #ccd0da !important;
+      }
+    }
+  }
+
   toolbar .toolbarbutton-1 {
     &:not([disabled]) {
-      &:is([open], [checked]) > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack){
+      &:is([open], [checked])
+        > :is(
+          .toolbarbutton-icon,
+          .toolbarbutton-text,
+          .toolbarbutton-badge-stack
+        ) {
         fill: #dce0e8;
       }
     }
