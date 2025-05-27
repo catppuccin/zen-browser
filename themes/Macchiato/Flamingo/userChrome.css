@@ -1,6 +1,7 @@
 /* Catppuccin Macchiato Flamingo userChrome.css*/
 
 @media (prefers-color-scheme: dark) {
+
   :root {
     --zen-colors-primary: #363a4f !important;
     --zen-primary-color: #f0c6c6 !important;
@@ -26,7 +27,7 @@
     --toolbox-bgcolor-inactive: #1e2030 !important;
   }
 
-  #permissions-granted-icon {
+  #permissions-granted-icon{
     color: #1e2030 !important;
   }
 
@@ -59,22 +60,9 @@
     background: #181926 !important;
   }
 
-  #zen-media-controls-toolbar {
-    & #zen-media-progress-bar {
-      &::-moz-range-track {
-        background: var(--zen-colors-secondary) !important;
-      }
-    }
-  }
-
   toolbar .toolbarbutton-1 {
     &:not([disabled]) {
-      &:is([open], [checked])
-        > :is(
-          .toolbarbutton-icon,
-          .toolbarbutton-text,
-          .toolbarbutton-badge-stack
-        ) {
+      &:is([open], [checked]) > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack){
         fill: #181926;
       }
     }
