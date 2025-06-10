@@ -3,7 +3,7 @@ name: whiskers
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [fix/compact-mode-css]
   pull_request:
     branches: [main]
 
