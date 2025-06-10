@@ -26,18 +26,12 @@
     --toolbox-bgcolor-inactive: #181825 !important;
   }
 
-  toolbar#nav-bar.browser-toolbar.chromeclass-location {
-    background-color: #181825 !important;
-  }
-
+  /* For Vertical bar (Sidebar) */
   hbox#titlebar {
     background-color: #181825 !important;
   }
 
-  toolbartabstop {
-    background-color: #181825 !important;
-  }
-
+  /* For Toolbar  */
   #zen-appcontent-navbar-container {
     background-color: #181825 !important;
   }

@@ -36,6 +36,14 @@ whiskers:
     --toolbox-bgcolor-inactive: #{{ mantle.hex }} !important;
   }
 
+  hbox#titlebar {
+    background-color: #{{ mantle.hex }} !important;
+  }
+
+  #zen-appcontent-navbar-container {
+    background-color: #{{ mantle.hex }} !important;
+  }
+
   #permissions-granted-icon{
     color: #{{ mantle.hex }} !important;
   }
