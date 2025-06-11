@@ -36,7 +36,7 @@ whiskers:
     --toolbox-bgcolor-inactive: #{{ mantle.hex }} !important;
   }
 
-  #permissions-granted-icon{
+  #permissions-granted-icon {
     color: #{{ mantle.hex }} !important;
   }
 
