@@ -119,12 +119,11 @@
     --identity-tab-color: #cba6f7 !important;
     --identity-icon-color: #cba6f7 !important;
   }
-  /* For Vertical bar (Sidebar) */
+
   hbox#titlebar {
     background-color: #181825 !important;
   }
 
-  /* For Toolbar  */
   #zen-appcontent-navbar-container {
     background-color: #181825 !important;
   }

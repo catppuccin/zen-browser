@@ -120,12 +120,10 @@
     --identity-icon-color: #8839ef !important;
   }
 
-  /* For Vertical bar (Sidebar) */
   hbox#titlebar {
-    background-color: #e6e9ef !important;
+    background-color:#e6e9ef !important;
   }
 
-  /* For Toolbar  */
   #zen-appcontent-navbar-container {
     background-color: #e6e9ef !important;
   }
