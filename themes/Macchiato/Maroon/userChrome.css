@@ -26,7 +26,7 @@
     --toolbox-bgcolor-inactive: #1e2030 !important;
   }
 
-  #permissions-granted-icon{
+  #permissions-granted-icon {
     color: #1e2030 !important;
   }
 
@@ -118,5 +118,13 @@
   .identity-color-purple {
     --identity-tab-color: #c6a0f6 !important;
     --identity-icon-color: #c6a0f6 !important;
+  }
+
+  hbox#titlebar {
+    background-color: #1e2030 !important;
+  }
+
+  #zen-appcontent-navbar-container {
+    background-color: #1e2030 !important;
   }
 }

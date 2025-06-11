@@ -36,7 +36,7 @@ whiskers:
     --toolbox-bgcolor-inactive: #{{ mantle.hex }} !important;
   }
 
-  #permissions-granted-icon{
+  #permissions-granted-icon {
     color: #{{ mantle.hex }} !important;
   }
 
@@ -128,5 +128,13 @@ whiskers:
   .identity-color-purple {
     --identity-tab-color: #{{ mauve.hex }} !important;
     --identity-icon-color: #{{ mauve.hex }} !important;
+  }
+
+  hbox#titlebar {
+    background-color: #{{ mantle.hex }} !important;
+  }
+
+  #zen-appcontent-navbar-container {
+    background-color: #{{ mantle.hex }} !important;
   }
 }
