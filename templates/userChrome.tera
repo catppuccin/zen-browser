@@ -52,7 +52,7 @@ whiskers:
     background-color: #{{ mantle.hex }} !important;
   }
 
-  #urlbar-background {
+  .urlbar-background {
     background-color: #{{ base.hex }} !important;
   }
 
