@@ -30,6 +30,10 @@
     color: #181825 !important;
   }
 
+#historySwipeAnimationPreviousArrow,#historySwipeAnimationNextArrow {
+		--swipe-nav-icon-primary-color: #74c7ec !important;
+		--swipe-nav-icon-accent-color: #1e1e2e!important;
+	}
   .sidebar-placesTree {
     background-color: #1e1e2e !important;
   }
