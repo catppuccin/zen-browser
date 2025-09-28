@@ -40,6 +40,10 @@ whiskers:
     color: #{{ mantle.hex }} !important;
   }
 
+#historySwipeAnimationPreviousArrow,#historySwipeAnimationNextArrow {
+		--swipe-nav-icon-primary-color: #{{ palette[accent].hex }} !important;
+		--swipe-nav-icon-accent-color: #{{ base.hex }}!important;
+	}
   .sidebar-placesTree {
     background-color: #{{ base.hex }} !important;
   }
