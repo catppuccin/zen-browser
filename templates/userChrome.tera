@@ -137,4 +137,8 @@ whiskers:
   #zen-appcontent-navbar-container {
     background-color: #{{ mantle.hex }} !important;
   }
+
+  #commonDialog {
+    background-color: #{{ mantle.hex }} !important;
+  }
 }
