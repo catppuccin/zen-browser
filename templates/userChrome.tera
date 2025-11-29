@@ -137,4 +137,12 @@ whiskers:
   #zen-appcontent-navbar-container {
     background-color: #{{ mantle.hex }} !important;
   }
+
+  #zen-toast-container .zen-toast label,
+  #zen-toast-container .zen-toast button .button-icon,
+  #urlbar-search-mode-indicator,
+  .urlbarView .urlbarView-row[selected] *,
+  .urlbarView .urlbarView-row[selected] .urlbarView-title-separator::before {
+    color: #{{ base.hex }} !important;
+  }
 }
