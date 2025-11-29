@@ -127,4 +127,12 @@
   #zen-appcontent-navbar-container {
     background-color: #181825 !important;
   }
+
+  #zen-toast-container .zen-toast label,
+  #zen-toast-container .zen-toast button .button-icon,
+  #urlbar-search-mode-indicator,
+  .urlbarView .urlbarView-row[selected] *,
+  .urlbarView .urlbarView-row[selected] .urlbarView-title-separator::before {
+    color: #1e1e2e !important;
+  }
 }
