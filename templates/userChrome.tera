@@ -130,8 +130,8 @@ whiskers:
     --identity-icon-color: #{{ mauve.hex }} !important;
   }
 
-  hbox#titlebar {
-    background-color: #{{ mantle.hex }} !important;
+  #navigator-toolbox {
+    --zen-main-browser-background-toolbar: #{{ mantle.hex }} !important;
   }
 
   #zen-appcontent-navbar-container {

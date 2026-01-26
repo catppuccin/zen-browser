@@ -120,8 +120,8 @@
     --identity-icon-color: #ca9ee6 !important;
   }
 
-  hbox#titlebar {
-    background-color: #292c3c !important;
+  #navigator-toolbox {
+    --zen-main-browser-background-toolbar: #292c3c !important;
   }
 
   #zen-appcontent-navbar-container {
