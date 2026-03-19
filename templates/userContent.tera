@@ -84,6 +84,8 @@ whiskers:
 
     groupbox , moz-card{
       background: #{{ base.hex }} !important;
+      padding: 1.6rem !important;
+      border-radius: 8px !important;
     }
 
     button,
