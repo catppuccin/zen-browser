@@ -73,67 +73,333 @@ whiskers:
   /* Variables and styles specific to about:preferences */
   @-moz-document url-prefix("about:preferences") {
     :root {
-      --zen-colors-tertiary: #{{ mantle.hex }} !important;
-      --in-content-text-color: #{{ text.hex }} !important;
+      --background-color-canvas: #{{ crust.hex }} !important;
+      --background-color-box: #{{ base.hex }} !important;
+      --background-color-box-info: #{{ surface0.hex }} !important;
+      --background-color-critical: color-mix(in srgb, #{{ red.hex }} 18%, #{{ base.hex }}) !important;
+      --background-color-information: color-mix(in srgb, #{{ blue.hex }} 18%, #{{ base.hex }}) !important;
+      --background-color-list-item-hover: color-mix(in srgb, #{{ palette[accent].hex }} 18%, transparent) !important;
+      --background-color-list-item-selected: color-mix(in srgb, #{{ palette[accent].hex }} 26%, #{{ surface0.hex }}) !important;
+      --background-color-success: color-mix(in srgb, #{{ green.hex }} 18%, #{{ base.hex }}) !important;
+      --background-color-warning: color-mix(in srgb, #{{ yellow.hex }} 18%, #{{ base.hex }}) !important;
+      --border-color: #{{ surface1.hex }} !important;
+      --border-color-deemphasized: #{{ surface0.hex }} !important;
+      --border-color-interactive: #{{ surface2.hex }} !important;
+      --border-color-interactive-hover: #{{ overlay0.hex }} !important;
+      --border-color-interactive-active: #{{ overlay1.hex }} !important;
+      --border-color-selected: #{{ palette[accent].hex }} !important;
+      --box-background-color: #{{ base.hex }} !important;
+      --box-border-color: #{{ surface1.hex }} !important;
+      --box-button-background-color: #{{ surface0.hex }} !important;
+      --box-button-background-color-hover: #{{ surface1.hex }} !important;
+      --box-button-background-color-active: #{{ surface2.hex }} !important;
+      --box-button-background-color-selected: color-mix(in srgb, #{{ palette[accent].hex }} 24%, #{{ surface0.hex }}) !important;
+      --box-button-text-color: #{{ text.hex }} !important;
+      --box-icon-color: #{{ subtext1.hex }} !important;
+      --button-background-color: #{{ surface0.hex }} !important;
+      --button-background-color-hover: #{{ surface1.hex }} !important;
+      --button-background-color-active: #{{ surface2.hex }} !important;
+      --button-background-color-selected: color-mix(in srgb, #{{ palette[accent].hex }} 24%, #{{ surface0.hex }}) !important;
+      --button-background-color-primary: #{{ palette[accent].hex }} !important;
+      --button-background-color-primary-hover: color-mix(in srgb, #{{ palette[accent].hex }} 86%, #{{ text.hex }}) !important;
+      --button-background-color-primary-active: color-mix(in srgb, #{{ palette[accent].hex }} 94%, #{{ base.hex }}) !important;
+      --button-border-color: #{{ surface1.hex }} !important;
+      --button-border-color-hover: #{{ surface2.hex }} !important;
+      --button-border-color-active: #{{ palette[accent].hex }} !important;
+      --button-border-color-primary: #{{ palette[accent].hex }} !important;
+      --button-text-color: #{{ text.hex }} !important;
+      --button-text-color-hover: #{{ text.hex }} !important;
+      --button-text-color-active: #{{ text.hex }} !important;
+      --button-text-color-primary: #{{ crust.hex }} !important;
+      --button-text-color-primary-hover: #{{ crust.hex }} !important;
+      --button-text-color-primary-active: #{{ crust.hex }} !important;
+      --card-background-color: #{{ base.hex }} !important;
+      --card-border-color: #{{ surface1.hex }} !important;
+      --card-box-shadow: none !important;
+      --card-box-shadow-hover: 0 0 0 1px #{{ surface2.hex }} !important;
+      --color-accent-primary: #{{ palette[accent].hex }} !important;
+      --color-accent-primary-hover: {{ palette[accent] | add(lightness=5) | css_rgb }} !important;
+      --color-accent-primary-active: {{ palette[accent] | add(hue=15) | css_rgb}} !important;
+      --focus-outline-color: #{{ palette[accent].hex }} !important;
+      --icon-color: #{{ subtext1.hex }} !important;
+      --icon-color-critical: #{{ red.hex }} !important;
+      --icon-color-information: #{{ blue.hex }} !important;
+      --icon-color-success: #{{ green.hex }} !important;
+      --icon-color-warning: #{{ yellow.hex }} !important;
+      --input-text-background-color: #{{ mantle.hex }} !important;
+      --input-text-border-color: #{{ surface2.hex }} !important;
+      --input-text-color: #{{ text.hex }} !important;
+      --input-text-placeholder-color: #{{ subtext0.hex }} !important;
       --link-color: #{{ palette[accent].hex }} !important;
+      --link-color-active: {{ palette[accent] | add(hue=15) | css_rgb}} !important;
       --link-color-hover: {{ palette[accent] | add(lightness=5) | css_rgb }} !important;
-      --zen-colors-primary: #{{ surface0.hex }} !important;
+      --link-color-visited: #{{ mauve.hex }} !important;
+      --select-background-color: #{{ surface0.hex }} !important;
+      --select-background-color-hover: #{{ surface1.hex }} !important;
+      --select-background-color-active: #{{ surface2.hex }} !important;
+      --select-border-color: #{{ surface1.hex }} !important;
+      --select-border-color-hover: #{{ surface2.hex }} !important;
+      --select-border-color-active: #{{ palette[accent].hex }} !important;
+      --select-text-color: #{{ text.hex }} !important;
+      --table-row-background-color-alternate: #{{ mantle.hex }} !important;
+      --table-row-background-color-hover: #{{ surface0.hex }} !important;
+      --table-row-background-color-selected: color-mix(in srgb, #{{ palette[accent].hex }} 24%, #{{ surface0.hex }}) !important;
+      --text-color: #{{ text.hex }} !important;
+      --text-color-deemphasized: #{{ subtext1.hex }} !important;
+      --text-color-disabled: #{{ overlay0.hex }} !important;
+      --text-color-error: #{{ red.hex }} !important;
+      --text-color-success: #{{ green.hex }} !important;
+      --text-color-warning: #{{ yellow.hex }} !important;
+      --toggle-background-color: #{{ surface1.hex }} !important;
+      --toggle-background-color-hover: #{{ surface2.hex }} !important;
+      --toggle-background-color-pressed: #{{ palette[accent].hex }} !important;
+      --toggle-background-color-pressed-hover: color-mix(in srgb, #{{ palette[accent].hex }} 86%, #{{ text.hex }}) !important;
+      --toggle-dot-background-color: #{{ text.hex }} !important;
+      --toggle-dot-background-color-on-pressed: #{{ crust.hex }} !important;
+      --visual-picker-item-background-color: #{{ base.hex }} !important;
+      --visual-picker-item-background-color-hover: #{{ surface0.hex }} !important;
+      --visual-picker-item-background-color-active: #{{ surface1.hex }} !important;
+      --visual-picker-item-background-color-selected: color-mix(in srgb, #{{ palette[accent].hex }} 16%, #{{ surface0.hex }}) !important;
+      --visual-picker-item-border-color: #{{ surface1.hex }} !important;
+      --visual-picker-item-border-color-hover: #{{ surface2.hex }} !important;
+      --visual-picker-item-border-color-selected: #{{ palette[accent].hex }} !important;
+      --visual-picker-item-check-icon-color: #{{ crust.hex }} !important;
+      --visual-picker-item-icon-color: #{{ subtext1.hex }} !important;
+      --visual-picker-item-text-color: #{{ text.hex }} !important;
+      --zen-colors-tertiary: #{{ mantle.hex }} !important;
+      --zen-colors-border: #{{ surface1.hex }} !important;
+      --zen-colors-hover-bg: #{{ surface0.hex }} !important;
+      --in-content-text-color: #{{ text.hex }} !important;
+      --in-content-page-background: #{{ crust.hex }} !important;
+      --in-content-page-color: #{{ text.hex }} !important;
       --in-content-box-background: #{{ surface0.hex }} !important;
+      --in-content-box-background-odd: #{{ mantle.hex }} !important;
+      --in-content-box-border-color: #{{ surface1.hex }} !important;
+      --in-content-border-color: #{{ surface1.hex }} !important;
+      --in-content-button-background: #{{ surface0.hex }} !important;
+      --in-content-button-background-hover: #{{ surface1.hex }} !important;
+      --in-content-button-background-active: #{{ surface2.hex }} !important;
+      --in-content-button-border-color: #{{ surface1.hex }} !important;
+      --in-content-button-border-color-hover: #{{ surface2.hex }} !important;
+      --in-content-button-border-color-active: #{{ palette[accent].hex }} !important;
+      --in-content-button-text-color: #{{ text.hex }} !important;
+      --in-content-deemphasized-text: #{{ subtext1.hex }} !important;
+      --in-content-item-hover: #{{ surface0.hex }} !important;
+      --in-content-item-selected: color-mix(in srgb, #{{ palette[accent].hex }} 22%, #{{ surface0.hex }}) !important;
+      --in-content-primary-button-background: #{{ palette[accent].hex }} !important;
+      --in-content-primary-button-background-hover: color-mix(in srgb, #{{ palette[accent].hex }} 86%, #{{ text.hex }}) !important;
+      --in-content-primary-button-background-active: color-mix(in srgb, #{{ palette[accent].hex }} 94%, #{{ base.hex }}) !important;
+      --in-content-primary-button-text-color: #{{ crust.hex }} !important;
+      --zen-colors-primary: #{{ surface0.hex }} !important;
       --zen-primary-color: #{{ palette[accent].hex }} !important;
     }
 
-    groupbox , moz-card{
-      background: #{{ base.hex }} !important;
-    }
-
-    button,
-    groupbox menulist {
-      background: #{{ surface0.hex }} !important;
+    html,
+    body,
+    #preferences-root,
+    #preferences-body,
+    #preferences-stack,
+    .main-content,
+    .pane-container,
+    .sticky-container,
+    .sticky-inner-container {
+      background: #{{ crust.hex }} !important;
       color: #{{ text.hex }} !important;
     }
 
-    .main-content {
-      background-color: #{{ crust.hex }} !important;
+    .navigation {
+      background: #{{ mantle.hex }} !important;
+      color: #{{ text.hex }} !important;
+    }
+
+    #categories > .category,
+    .sidebar-footer-link {
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    #categories > .category:hover,
+    .sidebar-footer-link:hover {
+      background: #{{ surface0.hex }} !important;
+    }
+
+    #categories > .category[selected],
+    #categories > .category.selected {
+      color: #{{ palette[accent].hex }} !important;
+      border-color: transparent !important;
+    }
+
+    groupbox,
+    moz-card {
+      background: #{{ base.hex }} !important;
+      border: 1px solid #{{ surface1.hex }} !important;
+      box-shadow: none !important;
+      color: #{{ text.hex }} !important;
+    }
+
+    groupbox.highlighting-group {
+      padding: var(--space-large) !important;
+    }
+
+    moz-card {
+      --card-background-color: #{{ base.hex }} !important;
+      --card-border-color: #{{ surface1.hex }} !important;
+      --card-box-shadow: none !important;
+      --card-box-shadow-hover: 0 0 0 1px #{{ surface2.hex }} !important;
+    }
+
+    moz-box-group,
+    moz-box-item,
+    moz-box-link,
+    moz-box-button {
+      --box-background-color: #{{ base.hex }} !important;
+      --box-border-color: #{{ surface1.hex }} !important;
+      --box-button-background-color: #{{ surface0.hex }} !important;
+      --box-button-background-color-hover: #{{ surface1.hex }} !important;
+      --box-button-background-color-active: #{{ surface2.hex }} !important;
+      --box-button-text-color: #{{ text.hex }} !important;
+      --box-icon-color: #{{ subtext1.hex }} !important;
+    }
+
+    moz-input-search,
+    moz-input-text,
+    moz-select {
+      --input-text-background-color: #{{ mantle.hex }} !important;
+      --input-text-border-color: #{{ surface2.hex }} !important;
+      --input-text-color: #{{ text.hex }} !important;
+      --input-text-placeholder-color: #{{ subtext0.hex }} !important;
+      --select-background-color: #{{ surface0.hex }} !important;
+      --select-background-color-hover: #{{ surface1.hex }} !important;
+      --select-background-color-active: #{{ surface2.hex }} !important;
+      --select-border-color: #{{ surface1.hex }} !important;
+      --select-border-color-hover: #{{ surface2.hex }} !important;
+      --select-border-color-active: #{{ palette[accent].hex }} !important;
+      --select-text-color: #{{ text.hex }} !important;
+    }
+
+    moz-toggle {
+      --toggle-background-color: #{{ surface1.hex }} !important;
+      --toggle-background-color-hover: #{{ surface2.hex }} !important;
+      --toggle-background-color-pressed: #{{ palette[accent].hex }} !important;
+      --toggle-background-color-pressed-hover: color-mix(in srgb, #{{ palette[accent].hex }} 86%, #{{ text.hex }}) !important;
+      --toggle-dot-background-color: #{{ text.hex }} !important;
+      --toggle-dot-background-color-on-pressed: #{{ crust.hex }} !important;
+    }
+
+    moz-visual-picker-item {
+      --visual-picker-item-background-color: #{{ base.hex }} !important;
+      --visual-picker-item-background-color-hover: #{{ surface0.hex }} !important;
+      --visual-picker-item-background-color-active: #{{ surface1.hex }} !important;
+      --visual-picker-item-background-color-selected: color-mix(in srgb, #{{ palette[accent].hex }} 16%, #{{ surface0.hex }}) !important;
+      --visual-picker-item-border-color: #{{ surface1.hex }} !important;
+      --visual-picker-item-border-color-hover: #{{ surface2.hex }} !important;
+      --visual-picker-item-border-color-selected: #{{ palette[accent].hex }} !important;
+      --visual-picker-item-check-icon-color: #{{ crust.hex }} !important;
+      --visual-picker-item-icon-color: #{{ subtext1.hex }} !important;
+      --visual-picker-item-text-color: #{{ text.hex }} !important;
+    }
+
+    button,
+    groupbox menulist,
+    groupbox select {
+      background: #{{ surface0.hex }} !important;
+      color: #{{ text.hex }} !important;
+      border-color: #{{ surface1.hex }} !important;
+    }
+
+    button:not([disabled]):hover,
+    groupbox menulist:not([disabled]):hover,
+    groupbox select:not([disabled]):hover {
+      background: #{{ surface1.hex }} !important;
+      border-color: #{{ surface2.hex }} !important;
+    }
+
+    button:not([disabled]):hover:active,
+    groupbox menulist[open="true"],
+    groupbox select:active {
+      background: #{{ surface2.hex }} !important;
+      border-color: #{{ palette[accent].hex }} !important;
+    }
+
+    .zenCKSOption-input {
+      background: #{{ surface0.hex }} !important;
+      border-color: #{{ surface1.hex }} !important;
+      color: #{{ text.hex }} !important;
+    }
+
+    .zenCKSOption-input:hover {
+      background: #{{ surface1.hex }} !important;
+      border-color: #{{ surface2.hex }} !important;
+    }
+
+    .zenCKSOption-input.zenCKSOption-input-editing {
+      background: #{{ mantle.hex }} !important;
+      border-color: #{{ palette[accent].hex }} !important;
+      box-shadow: 0 0 0 2px color-mix(in srgb, #{{ palette[accent].hex }} 35%, transparent) !important;
+    }
+
+    #zenCKSOption-wrapper > [data-group] {
+      border-bottom-color: #{{ surface0.hex }} !important;
+    }
+
+    #zen-theme-builder,
+    .zenThemeMarketplaceItem {
+      background: #{{ base.hex }} !important;
+      border-color: #{{ surface1.hex }} !important;
+      color: #{{ text.hex }} !important;
+    }
+
+    .zenThemeMarketplaceItem:hover {
+      background: #{{ surface0.hex }} !important;
+      border-color: #{{ surface2.hex }} !important;
+    }
+
+    #zenLayoutList > [layout] img {
+      border-color: #{{ surface0.hex }} !important;
+    }
+
+    #zenLayoutList > [layout].selected img {
+      border-color: #{{ palette[accent].hex }} !important;
     }
 
     .identity-color-blue {
-      --identity-tab-color: #8aadf4 !important;
-      --identity-icon-color: #8aadf4 !important;
+      --identity-tab-color: #{{ blue.hex }} !important;
+      --identity-icon-color: #{{ blue.hex }} !important;
     }
 
     .identity-color-turquoise {
-      --identity-tab-color: #8bd5ca !important;
-      --identity-icon-color: #8bd5ca !important;
+      --identity-tab-color: #{{ teal.hex }} !important;
+      --identity-icon-color: #{{ teal.hex }} !important;
     }
 
     .identity-color-green {
-      --identity-tab-color: #a6da95 !important;
-      --identity-icon-color: #a6da95 !important;
+      --identity-tab-color: #{{ green.hex }} !important;
+      --identity-icon-color: #{{ green.hex }} !important;
     }
 
     .identity-color-yellow {
-      --identity-tab-color: #eed49f !important;
-      --identity-icon-color: #eed49f !important;
+      --identity-tab-color: #{{ yellow.hex }} !important;
+      --identity-icon-color: #{{ yellow.hex }} !important;
     }
 
     .identity-color-orange {
-      --identity-tab-color: #f5a97f !important;
-      --identity-icon-color: #f5a97f !important;
+      --identity-tab-color: #{{ peach.hex }} !important;
+      --identity-icon-color: #{{ peach.hex }} !important;
     }
 
     .identity-color-red {
-      --identity-tab-color: #ed8796 !important;
-      --identity-icon-color: #ed8796 !important;
+      --identity-tab-color: #{{ red.hex }} !important;
+      --identity-icon-color: #{{ red.hex }} !important;
     }
 
     .identity-color-pink {
-      --identity-tab-color: #f5bde6 !important;
-      --identity-icon-color: #f5bde6 !important;
+      --identity-tab-color: #{{ pink.hex }} !important;
+      --identity-icon-color: #{{ pink.hex }} !important;
     }
 
     .identity-color-purple {
-      --identity-tab-color: #c6a0f6 !important;
-      --identity-icon-color: #c6a0f6 !important;
+      --identity-tab-color: #{{ mauve.hex }} !important;
+      --identity-icon-color: #{{ mauve.hex }} !important;
     }
   }
 

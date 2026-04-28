@@ -63,67 +63,333 @@
   /* Variables and styles specific to about:preferences */
   @-moz-document url-prefix("about:preferences") {
     :root {
-      --zen-colors-tertiary: #181825 !important;
-      --in-content-text-color: #cdd6f4 !important;
+      --background-color-canvas: #11111b !important;
+      --background-color-box: #1e1e2e !important;
+      --background-color-box-info: #313244 !important;
+      --background-color-critical: color-mix(in srgb, #f38ba8 18%, #1e1e2e) !important;
+      --background-color-information: color-mix(in srgb, #89b4fa 18%, #1e1e2e) !important;
+      --background-color-list-item-hover: color-mix(in srgb, #fab387 18%, transparent) !important;
+      --background-color-list-item-selected: color-mix(in srgb, #fab387 26%, #313244) !important;
+      --background-color-success: color-mix(in srgb, #a6e3a1 18%, #1e1e2e) !important;
+      --background-color-warning: color-mix(in srgb, #f9e2af 18%, #1e1e2e) !important;
+      --border-color: #45475a !important;
+      --border-color-deemphasized: #313244 !important;
+      --border-color-interactive: #585b70 !important;
+      --border-color-interactive-hover: #6c7086 !important;
+      --border-color-interactive-active: #7f849c !important;
+      --border-color-selected: #fab387 !important;
+      --box-background-color: #1e1e2e !important;
+      --box-border-color: #45475a !important;
+      --box-button-background-color: #313244 !important;
+      --box-button-background-color-hover: #45475a !important;
+      --box-button-background-color-active: #585b70 !important;
+      --box-button-background-color-selected: color-mix(in srgb, #fab387 24%, #313244) !important;
+      --box-button-text-color: #cdd6f4 !important;
+      --box-icon-color: #bac2de !important;
+      --button-background-color: #313244 !important;
+      --button-background-color-hover: #45475a !important;
+      --button-background-color-active: #585b70 !important;
+      --button-background-color-selected: color-mix(in srgb, #fab387 24%, #313244) !important;
+      --button-background-color-primary: #fab387 !important;
+      --button-background-color-primary-hover: color-mix(in srgb, #fab387 86%, #cdd6f4) !important;
+      --button-background-color-primary-active: color-mix(in srgb, #fab387 94%, #1e1e2e) !important;
+      --button-border-color: #45475a !important;
+      --button-border-color-hover: #585b70 !important;
+      --button-border-color-active: #fab387 !important;
+      --button-border-color-primary: #fab387 !important;
+      --button-text-color: #cdd6f4 !important;
+      --button-text-color-hover: #cdd6f4 !important;
+      --button-text-color-active: #cdd6f4 !important;
+      --button-text-color-primary: #11111b !important;
+      --button-text-color-primary-hover: #11111b !important;
+      --button-text-color-primary-active: #11111b !important;
+      --card-background-color: #1e1e2e !important;
+      --card-border-color: #45475a !important;
+      --card-box-shadow: none !important;
+      --card-box-shadow-hover: 0 0 0 1px #585b70 !important;
+      --color-accent-primary: #fab387 !important;
+      --color-accent-primary-hover: rgb(251, 195, 161) !important;
+      --color-accent-primary-active: rgb(250, 208, 136) !important;
+      --focus-outline-color: #fab387 !important;
+      --icon-color: #bac2de !important;
+      --icon-color-critical: #f38ba8 !important;
+      --icon-color-information: #89b4fa !important;
+      --icon-color-success: #a6e3a1 !important;
+      --icon-color-warning: #f9e2af !important;
+      --input-text-background-color: #181825 !important;
+      --input-text-border-color: #585b70 !important;
+      --input-text-color: #cdd6f4 !important;
+      --input-text-placeholder-color: #a6adc8 !important;
       --link-color: #fab387 !important;
+      --link-color-active: rgb(250, 208, 136) !important;
       --link-color-hover: rgb(251, 195, 161) !important;
-      --zen-colors-primary: #313244 !important;
+      --link-color-visited: #cba6f7 !important;
+      --select-background-color: #313244 !important;
+      --select-background-color-hover: #45475a !important;
+      --select-background-color-active: #585b70 !important;
+      --select-border-color: #45475a !important;
+      --select-border-color-hover: #585b70 !important;
+      --select-border-color-active: #fab387 !important;
+      --select-text-color: #cdd6f4 !important;
+      --table-row-background-color-alternate: #181825 !important;
+      --table-row-background-color-hover: #313244 !important;
+      --table-row-background-color-selected: color-mix(in srgb, #fab387 24%, #313244) !important;
+      --text-color: #cdd6f4 !important;
+      --text-color-deemphasized: #bac2de !important;
+      --text-color-disabled: #6c7086 !important;
+      --text-color-error: #f38ba8 !important;
+      --text-color-success: #a6e3a1 !important;
+      --text-color-warning: #f9e2af !important;
+      --toggle-background-color: #45475a !important;
+      --toggle-background-color-hover: #585b70 !important;
+      --toggle-background-color-pressed: #fab387 !important;
+      --toggle-background-color-pressed-hover: color-mix(in srgb, #fab387 86%, #cdd6f4) !important;
+      --toggle-dot-background-color: #cdd6f4 !important;
+      --toggle-dot-background-color-on-pressed: #11111b !important;
+      --visual-picker-item-background-color: #1e1e2e !important;
+      --visual-picker-item-background-color-hover: #313244 !important;
+      --visual-picker-item-background-color-active: #45475a !important;
+      --visual-picker-item-background-color-selected: color-mix(in srgb, #fab387 16%, #313244) !important;
+      --visual-picker-item-border-color: #45475a !important;
+      --visual-picker-item-border-color-hover: #585b70 !important;
+      --visual-picker-item-border-color-selected: #fab387 !important;
+      --visual-picker-item-check-icon-color: #11111b !important;
+      --visual-picker-item-icon-color: #bac2de !important;
+      --visual-picker-item-text-color: #cdd6f4 !important;
+      --zen-colors-tertiary: #181825 !important;
+      --zen-colors-border: #45475a !important;
+      --zen-colors-hover-bg: #313244 !important;
+      --in-content-text-color: #cdd6f4 !important;
+      --in-content-page-background: #11111b !important;
+      --in-content-page-color: #cdd6f4 !important;
       --in-content-box-background: #313244 !important;
+      --in-content-box-background-odd: #181825 !important;
+      --in-content-box-border-color: #45475a !important;
+      --in-content-border-color: #45475a !important;
+      --in-content-button-background: #313244 !important;
+      --in-content-button-background-hover: #45475a !important;
+      --in-content-button-background-active: #585b70 !important;
+      --in-content-button-border-color: #45475a !important;
+      --in-content-button-border-color-hover: #585b70 !important;
+      --in-content-button-border-color-active: #fab387 !important;
+      --in-content-button-text-color: #cdd6f4 !important;
+      --in-content-deemphasized-text: #bac2de !important;
+      --in-content-item-hover: #313244 !important;
+      --in-content-item-selected: color-mix(in srgb, #fab387 22%, #313244) !important;
+      --in-content-primary-button-background: #fab387 !important;
+      --in-content-primary-button-background-hover: color-mix(in srgb, #fab387 86%, #cdd6f4) !important;
+      --in-content-primary-button-background-active: color-mix(in srgb, #fab387 94%, #1e1e2e) !important;
+      --in-content-primary-button-text-color: #11111b !important;
+      --zen-colors-primary: #313244 !important;
       --zen-primary-color: #fab387 !important;
     }
 
-    groupbox , moz-card{
-      background: #1e1e2e !important;
-    }
-
-    button,
-    groupbox menulist {
-      background: #313244 !important;
+    html,
+    body,
+    #preferences-root,
+    #preferences-body,
+    #preferences-stack,
+    .main-content,
+    .pane-container,
+    .sticky-container,
+    .sticky-inner-container {
+      background: #11111b !important;
       color: #cdd6f4 !important;
     }
 
-    .main-content {
-      background-color: #11111b !important;
+    .navigation {
+      background: #181825 !important;
+      color: #cdd6f4 !important;
+    }
+
+    #categories > .category,
+    .sidebar-footer-link {
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    #categories > .category:hover,
+    .sidebar-footer-link:hover {
+      background: #313244 !important;
+    }
+
+    #categories > .category[selected],
+    #categories > .category.selected {
+      color: #fab387 !important;
+      border-color: transparent !important;
+    }
+
+    groupbox,
+    moz-card {
+      background: #1e1e2e !important;
+      border: 1px solid #45475a !important;
+      box-shadow: none !important;
+      color: #cdd6f4 !important;
+    }
+
+    groupbox.highlighting-group {
+      padding: var(--space-large) !important;
+    }
+
+    moz-card {
+      --card-background-color: #1e1e2e !important;
+      --card-border-color: #45475a !important;
+      --card-box-shadow: none !important;
+      --card-box-shadow-hover: 0 0 0 1px #585b70 !important;
+    }
+
+    moz-box-group,
+    moz-box-item,
+    moz-box-link,
+    moz-box-button {
+      --box-background-color: #1e1e2e !important;
+      --box-border-color: #45475a !important;
+      --box-button-background-color: #313244 !important;
+      --box-button-background-color-hover: #45475a !important;
+      --box-button-background-color-active: #585b70 !important;
+      --box-button-text-color: #cdd6f4 !important;
+      --box-icon-color: #bac2de !important;
+    }
+
+    moz-input-search,
+    moz-input-text,
+    moz-select {
+      --input-text-background-color: #181825 !important;
+      --input-text-border-color: #585b70 !important;
+      --input-text-color: #cdd6f4 !important;
+      --input-text-placeholder-color: #a6adc8 !important;
+      --select-background-color: #313244 !important;
+      --select-background-color-hover: #45475a !important;
+      --select-background-color-active: #585b70 !important;
+      --select-border-color: #45475a !important;
+      --select-border-color-hover: #585b70 !important;
+      --select-border-color-active: #fab387 !important;
+      --select-text-color: #cdd6f4 !important;
+    }
+
+    moz-toggle {
+      --toggle-background-color: #45475a !important;
+      --toggle-background-color-hover: #585b70 !important;
+      --toggle-background-color-pressed: #fab387 !important;
+      --toggle-background-color-pressed-hover: color-mix(in srgb, #fab387 86%, #cdd6f4) !important;
+      --toggle-dot-background-color: #cdd6f4 !important;
+      --toggle-dot-background-color-on-pressed: #11111b !important;
+    }
+
+    moz-visual-picker-item {
+      --visual-picker-item-background-color: #1e1e2e !important;
+      --visual-picker-item-background-color-hover: #313244 !important;
+      --visual-picker-item-background-color-active: #45475a !important;
+      --visual-picker-item-background-color-selected: color-mix(in srgb, #fab387 16%, #313244) !important;
+      --visual-picker-item-border-color: #45475a !important;
+      --visual-picker-item-border-color-hover: #585b70 !important;
+      --visual-picker-item-border-color-selected: #fab387 !important;
+      --visual-picker-item-check-icon-color: #11111b !important;
+      --visual-picker-item-icon-color: #bac2de !important;
+      --visual-picker-item-text-color: #cdd6f4 !important;
+    }
+
+    button,
+    groupbox menulist,
+    groupbox select {
+      background: #313244 !important;
+      color: #cdd6f4 !important;
+      border-color: #45475a !important;
+    }
+
+    button:not([disabled]):hover,
+    groupbox menulist:not([disabled]):hover,
+    groupbox select:not([disabled]):hover {
+      background: #45475a !important;
+      border-color: #585b70 !important;
+    }
+
+    button:not([disabled]):hover:active,
+    groupbox menulist[open="true"],
+    groupbox select:active {
+      background: #585b70 !important;
+      border-color: #fab387 !important;
+    }
+
+    .zenCKSOption-input {
+      background: #313244 !important;
+      border-color: #45475a !important;
+      color: #cdd6f4 !important;
+    }
+
+    .zenCKSOption-input:hover {
+      background: #45475a !important;
+      border-color: #585b70 !important;
+    }
+
+    .zenCKSOption-input.zenCKSOption-input-editing {
+      background: #181825 !important;
+      border-color: #fab387 !important;
+      box-shadow: 0 0 0 2px color-mix(in srgb, #fab387 35%, transparent) !important;
+    }
+
+    #zenCKSOption-wrapper > [data-group] {
+      border-bottom-color: #313244 !important;
+    }
+
+    #zen-theme-builder,
+    .zenThemeMarketplaceItem {
+      background: #1e1e2e !important;
+      border-color: #45475a !important;
+      color: #cdd6f4 !important;
+    }
+
+    .zenThemeMarketplaceItem:hover {
+      background: #313244 !important;
+      border-color: #585b70 !important;
+    }
+
+    #zenLayoutList > [layout] img {
+      border-color: #313244 !important;
+    }
+
+    #zenLayoutList > [layout].selected img {
+      border-color: #fab387 !important;
     }
 
     .identity-color-blue {
-      --identity-tab-color: #8aadf4 !important;
-      --identity-icon-color: #8aadf4 !important;
+      --identity-tab-color: #89b4fa !important;
+      --identity-icon-color: #89b4fa !important;
     }
 
     .identity-color-turquoise {
-      --identity-tab-color: #8bd5ca !important;
-      --identity-icon-color: #8bd5ca !important;
+      --identity-tab-color: #94e2d5 !important;
+      --identity-icon-color: #94e2d5 !important;
     }
 
     .identity-color-green {
-      --identity-tab-color: #a6da95 !important;
-      --identity-icon-color: #a6da95 !important;
+      --identity-tab-color: #a6e3a1 !important;
+      --identity-icon-color: #a6e3a1 !important;
     }
 
     .identity-color-yellow {
-      --identity-tab-color: #eed49f !important;
-      --identity-icon-color: #eed49f !important;
+      --identity-tab-color: #f9e2af !important;
+      --identity-icon-color: #f9e2af !important;
     }
 
     .identity-color-orange {
-      --identity-tab-color: #f5a97f !important;
-      --identity-icon-color: #f5a97f !important;
+      --identity-tab-color: #fab387 !important;
+      --identity-icon-color: #fab387 !important;
     }
 
     .identity-color-red {
-      --identity-tab-color: #ed8796 !important;
-      --identity-icon-color: #ed8796 !important;
+      --identity-tab-color: #f38ba8 !important;
+      --identity-icon-color: #f38ba8 !important;
     }
 
     .identity-color-pink {
-      --identity-tab-color: #f5bde6 !important;
-      --identity-icon-color: #f5bde6 !important;
+      --identity-tab-color: #f5c2e7 !important;
+      --identity-icon-color: #f5c2e7 !important;
     }
 
     .identity-color-purple {
-      --identity-tab-color: #c6a0f6 !important;
-      --identity-icon-color: #c6a0f6 !important;
+      --identity-tab-color: #cba6f7 !important;
+      --identity-icon-color: #cba6f7 !important;
     }
   }
 

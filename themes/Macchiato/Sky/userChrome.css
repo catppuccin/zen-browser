@@ -24,10 +24,64 @@
     --zen-themed-toolbar-bg: #1e2030 !important;
     --zen-main-browser-background: #1e2030 !important;
     --toolbox-bgcolor-inactive: #1e2030 !important;
+    --zen-element-separation: 8px !important;
+    --zen-webview-border-radius: 10px !important;
+    --catppuccin-quit-dialog-bg: #24273a !important;
+    --catppuccin-quit-dialog-fg: #cad3f5 !important;
+    --catppuccin-quit-dialog-accent: #91d7e3 !important;
+    --catppuccin-quit-dialog-button-bg: #363a4f !important;
+    --catppuccin-quit-dialog-button-bg-hover: #494d64 !important;
+    --catppuccin-quit-dialog-button-bg-active: #5b6078 !important;
+    --catppuccin-quit-dialog-button-border: #5b6078 !important;
+    --catppuccin-quit-dialog-muted: #a5adcb !important;
   }
 
   #permissions-granted-icon {
     color: #1e2030 !important;
+  }
+
+  /* Keep the bookmarks slide-in panel on one flat background so the header
+   * strip doesn't read as a darker band above the tree.
+   */
+  #bookmarksPanel {
+    --sidebar-background-color: #24273a !important;
+    --sidebar-text-color: #cad3f5 !important;
+    --sidebar-border-color: #24273a !important;
+    --lwt-sidebar-background-color: #24273a !important;
+    --lwt-sidebar-text-color: #cad3f5 !important;
+    background: #24273a !important;
+    background-image: none !important;
+  }
+
+  #bookmarksPanel #sidebar-panel-header,
+  #bookmarksPanel #sidebar-search-container,
+  #bookmarksPanel .sidebar-placesTree {
+    background: #24273a !important;
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+
+  #bookmarksPanel #search-box {
+    --toolbar-field-focus-color: #24273a !important;
+    --lwt-toolbar-field-focus: #24273a !important;
+    --lwt-toolbar-field-border-color: #24273a !important;
+    border-color: #24273a !important;
+    box-shadow: none !important;
+  }
+
+  /* The host sidebar shell can paint its own darker backdrop, so force the
+   * bookmarks launcher container itself to the same color too.
+   */
+  #sidebar-box[sidebarcommand="viewBookmarksSidebar"],
+  #sidebar-box[sidebarcommand="viewBookmarksSidebar"] > *,
+  #sidebar-main[sidebarcommand="viewBookmarksSidebar"],
+  #sidebar-main[sidebarcommand="viewBookmarksSidebar"] > * {
+    --sidebar-background-color: #24273a !important;
+    --sidebar-text-color: #cad3f5 !important;
+    --sidebar-border-color: #24273a !important;
+    background: #24273a !important;
+    background-image: none !important;
+    box-shadow: none !important;
   }
 
   .sidebar-placesTree {
@@ -120,11 +174,177 @@
     --identity-icon-color: #c6a0f6 !important;
   }
 
-  hbox#titlebar {
+  #zen-appcontent-navbar-container {
     background-color: #1e2030 !important;
   }
 
-  #zen-appcontent-navbar-container {
+  /* Keep only the splitter themed; let Zen manage its own wrapper layers so
+   * detached compact mode preserves the native shell structure.
+   */
+  #sidebar-splitter,
+  #zen-sidebar-splitter {
+    --catppuccin-splitter-idle: #1e2030;
+    --catppuccin-splitter-hover-neutral: color-mix(
+      in srgb,
+      white 28%,
+      #1e2030 72%
+    );
+    border: none !important;
+    opacity: 1 !important;
+    background: var(--catppuccin-splitter-idle) !important;
+    background-color: var(--catppuccin-splitter-idle) !important;
+    transition:
+      background-color 0.18s ease-in-out,
+      background 0.18s ease-in-out,
+      opacity 0.18s ease-in-out !important;
+  }
+
+  #sidebar-splitter::before,
+  #zen-sidebar-splitter::before {
+    display: none !important;
+    opacity: 0 !important;
+  }
+
+  #sidebar-splitter:hover,
+  #zen-sidebar-splitter:hover {
+    background: var(--catppuccin-splitter-hover-neutral) !important;
+    background-color: var(--catppuccin-splitter-hover-neutral) !important;
+  }
+
+  /* Wrapper appearance reset that proved safe in testing */
+  #zen-main-app-wrapper,
+  #zen-appcontent-wrapper,
+  #zen-sidebar-splitter,
+  #zen-browser-background {
+    appearance: unset !important;
+    -moz-default-appearance: none !important;
+  }
+
+  /* Wrapper/background painting that proved safe in testing */
+  #zen-main-app-wrapper,
+  #zen-appcontent-wrapper,
+  #zen-browser-background,
+  .zen-browser-generic-background,
+  .zen-toolbar-background,
+  #navigator-toolbox,
+  #tabbrowser-tabbox,
+  #main-window {
+    background: #1e2030 !important;
     background-color: #1e2030 !important;
+  }
+
+  /* Keep Zen's detached compact shell layered instead of painting every wrapper. */
+  :root[zen-compact-mode="true"] #navigator-toolbox:not([animate="true"]),
+  :root[zen-compact-mode="true"]
+    #navigator-toolbox:not([animate="true"])
+    #titlebar,
+  :root[zen-compact-mode="true"] #TabsToolbar,
+  :root[zen-compact-mode="true"] #zen-appcontent-navbar-container {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  :root[zen-compact-mode="true"]
+    #navigator-toolbox:not([animate="true"])
+    .zen-toolbar-background,
+  :root[zen-compact-mode="true"]
+    #navigator-toolbox:not([animate="true"])
+    .zen-toolbar-background::before,
+  :root[zen-compact-mode="true"]
+    #navigator-toolbox:not([animate="true"])
+    .zen-toolbar-background::after {
+    background: color-mix(
+      in srgb,
+      var(--lwt-sidebar-background-color) 82%,
+      black
+    ) !important;
+    background-color: color-mix(
+      in srgb,
+      var(--lwt-sidebar-background-color) 82%,
+      black
+    ) !important;
+  }
+
+  /* Remove seam shadows that can show through at the sidebar/content corners */
+  #zen-tabbox-wrapper #sidebar-box,
+  #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer {
+    box-shadow: none !important;
+  }
+
+  /* Theme Firefox/Zen's common prompt dialogs, including the quit warning. */
+  @-moz-document url("chrome://global/content/commonDialog.xhtml") {
+    :root {
+      color-scheme: dark !important;
+      --focus-outline: 2px solid var(--catppuccin-quit-dialog-accent) !important;
+      --focus-outline-offset: 2px !important;
+    }
+
+    #commonDialog,
+    dialog,
+    dialog::part(content-box) {
+      appearance: none !important;
+      background: var(--catppuccin-quit-dialog-bg) !important;
+      color: var(--catppuccin-quit-dialog-fg) !important;
+    }
+
+    #dialogGrid,
+    #infoContainer,
+    #iconContainer,
+    #checkboxContainer,
+    .dialogRow,
+    .dialogRow:not([hidden]) {
+      background: transparent !important;
+      color: inherit !important;
+    }
+
+    #infoTitle,
+    #infoBody,
+    description,
+    label,
+    checkbox,
+    .checkbox-label {
+      color: var(--catppuccin-quit-dialog-fg) !important;
+    }
+
+    #infoTitle {
+      font-weight: 700 !important;
+    }
+
+    #infoBody,
+    .checkbox-label {
+      color: var(--catppuccin-quit-dialog-muted) !important;
+    }
+
+    #infoIcon {
+      fill: var(--catppuccin-quit-dialog-accent) !important;
+    }
+
+    dialog::part(dialog-button) {
+      appearance: none !important;
+      -moz-appearance: none !important;
+      background: var(--catppuccin-quit-dialog-button-bg) !important;
+      background-image: none !important;
+      color: var(--catppuccin-quit-dialog-fg) !important;
+      border: 1px solid var(--catppuccin-quit-dialog-button-border) !important;
+      border-radius: 10px !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+      outline: none !important;
+    }
+
+    dialog::part(dialog-button):hover {
+      background: var(--catppuccin-quit-dialog-button-bg-hover) !important;
+      border-color: var(--catppuccin-quit-dialog-accent) !important;
+    }
+
+    dialog::part(dialog-button):hover:active {
+      background: var(--catppuccin-quit-dialog-button-bg-active) !important;
+      border-color: var(--catppuccin-quit-dialog-accent) !important;
+    }
+
+    dialog::part(dialog-button):focus-visible {
+      outline: 2px solid var(--catppuccin-quit-dialog-accent) !important;
+      outline-offset: 2px !important;
+    }
   }
 }
