@@ -36,6 +36,10 @@ whiskers:
     --toolbox-bgcolor-inactive: #{{ mantle.hex }} !important;
   }
 
+  #zen-browser-background {
+    --zen-main-browser-background: #{{ mantle.hex }} !important;
+  }
+
   #permissions-granted-icon {
     color: #{{ mantle.hex }} !important;
   }
