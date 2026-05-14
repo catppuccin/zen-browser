@@ -26,6 +26,10 @@
     --toolbox-bgcolor-inactive: #e6e9ef !important;
   }
 
+  #zen-browser-background {
+    --zen-main-browser-background: #e6e9ef !important;
+  }
+
   #permissions-granted-icon {
     color: #e6e9ef !important;
   }
