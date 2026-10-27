@@ -14,21 +14,169 @@ whiskers:
 
   /* Common variables affecting all pages */
   @-moz-document url-prefix("about:") {
-    :root {
+    :root, :host {
       --in-content-page-color: #{{ text.hex }} !important;
+      --text-color: #{{ text.hex }} !important;
+      --input-text-color: #{{ text.hex }} !important;
+      --button-text-color: #{{ text.hex }} !important;
+      --text-color-list-item-hover: #{{ text.hex }} !important;
+      --card-header-text-color: #{{ text.hex }} !important;
+      --card-header-text-color-hover: #{{ text.hex }} !important;
+      --card-header-text-color-active: #{{ text.hex }} !important;
+      --icon-color: #{{ text.hex }} !important;
+      --text-color-accent-primary-selected: #{{ crust.hex }} !important;
       --color-accent-primary: #{{ palette[accent].hex }} !important;
       --color-accent-primary-hover: {{ palette[accent] | add(lightness=5) | css_rgb }} !important;
       --color-accent-primary-active: {{ palette[accent] | add(hue=15) | css_rgb}} !important;
       background-color: #{{ base.hex }} !important;
       --in-content-page-background: #{{ base.hex }} !important;
+      --promo-background-color: #{{ surface0.hex }} !important;
+      --input-text-background-color: #{{ surface0.hex }} !important;
+      --background-color-box: #{{ surface0.hex }} !important;
+      --background-color-canvas: #{{ crust.hex }} !important;
+      --background-color-box-info: #{{ crust.hex }} !important;
+      --table-row-background-color: #{{ mantle.hex }} !important;
+      --table-row-background-color-alternate: #{{ base.hex }} !important;
+
+      --link-color: #{{ palette[accent].hex }} !important;
+      --link-color-hover: {{ palette[accent] | add(lightness=5) | css_rgb }} !important;
+      --table-background-color: #{{ mantle.hex }} !important;
+
+      /* Buttons */
+      --button-background-color: #{{ surface0.hex }} !important;
+      --button-background-color-hover: #{{ surface1.hex }} !important;
+      --button-background-color-active: #{{ surface2.hex }} !important;
+      --in-content-button-background: #{{ surface0.hex }} !important;
+      --in-content-button-background-hover: #{{ surface1.hex }} !important;
+      --in-content-button-background-active: #{{ surface2.hex }} !important;
+      --in-content-primary-button-background: #{{ palette[accent].hex }} !important;
+      --in-content-primary-button-background-hover: {{ palette[accent] | add(lightness=5) | css_rgb }} !important;
+      --in-content-primary-button-background-active: {{ palette[accent] | add(hue=15) | css_rgb }} !important;
+      --in-content-primary-button-text-color: #{{ crust.hex }} !important;
+      --in-content-primary-button-text-color-hover: #{{ crust.hex }} !important;
+      --in-content-primary-button-text-color-active: #{{ crust.hex }} !important;
+
+      /* Selected and hovered items (category lists, rows) */
+      --in-content-item-selected: #{{ surface0.hex }} !important;
+      --in-content-item-hover: #{{ surface0.hex }} !important;
+      --in-content-item-hover-text: #{{ text.hex }} !important;
+      --in-content-item-selected-text: #{{ text.hex }} !important;
+
+      /* Panels and focused fields */
+      --panel-background-color: #{{ base.hex }} !important;
+      --toolbar-field-background-color-focus: #{{ base.hex }} !important;
+
+      /* Firefox View */
+      --fxview-background-color: #{{ base.hex }} !important;
+      --fxview-background-color-secondary: #{{ mantle.hex }} !important;
+      --fxview-element-background-hover: #{{ surface0.hex }} !important;
+      --fxview-element-background-active: #{{ surface1.hex }} !important;
+      --newtab-background-color: #{{ base.hex }} !important;
+
+      /* Borders and separators (hr) */
+      --border-color: #{{ surface1.hex }} !important;
+      --border-color-deemphasized: #{{ surface1.hex }} !important;
+      --border-color-interactive: #{{ surface2.hex }} !important;
+      --border-color-interactive-hover: #{{ overlay0.hex }} !important;
+      --border-color-interactive-active: #{{ overlay1.hex }} !important;
+      --border-color-interactive-disabled: #{{ surface1.hex }} !important;
+      --border-color-selected: #{{ palette[accent].hex }} !important;
+      --card-border-color: #{{ surface1.hex }} !important;
+      --info-bar-border-color: #{{ surface1.hex }} !important;
+      --table-border-color: #{{ surface1.hex }} !important;
+      --input-border-color: #{{ surface2.hex }} !important;
+      --zen-input-border-color: #{{ surface2.hex }} !important;
+      --input-text-border-color: #{{ surface2.hex }} !important;
+      --input-text-border-color-disabled: #{{ surface1.hex }} !important;
+      --panel-border-color: #{{ surface2.hex }} !important;
+      --popup-border-color: #{{ surface2.hex }} !important;
+      --panel-separator-color: #{{ surface1.hex }} !important;
+      --sidebar-border-color: #{{ surface1.hex }} !important;
     }
 
+  }
+
+  /* Page nav logo (Settings, Add-ons, ...) */
+  @-moz-document url-prefix("about:") {
+    /* The page nav logo is a branding PNG inside the nav's shadow DOM, so cover it with an accent-colored ring */
+    moz-page-nav::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      left: 7.25px;
+      top: 65.5px;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      pointer-events: none;
+      background:
+        radial-gradient(
+          circle at center,
+          transparent 0 2.66px,
+          #{{ palette[accent].hex }} 2.66px 3.39px,
+          transparent 3.39px 4.67px,
+          #{{ palette[accent].hex }} 4.67px 5.87px,
+          transparent 5.87px 7.15px,
+          #{{ palette[accent].hex }} 7.15px 8.8px,
+          transparent 8.8px
+        ),
+        #{{ base.hex }};
+    }
+  }
+
+  /* Page nav buttons (Settings, Add-ons, Debugging, Policies, ...) */
+  @-moz-document url-prefix("about:") {
+    button:has(> img.page-nav-icon) {
+      background: #{{ base.hex }} !important;
+    }
+
+    button:has(> img.page-nav-icon):hover,
+    button:has(> img.page-nav-icon)[selected] {
+      background: #{{ surface0.hex }} !important;
+    }
+
+    button:has(> img.page-nav-icon):hover:active {
+      background: #{{ surface1.hex }} !important;
+    }
+  }
+
+  /* Checkboxes: palette background, accent when checked */
+  @-moz-document url-prefix("about:") {
+    input[type="checkbox"] {
+      appearance: none !important;
+      -moz-appearance: none !important;
+      box-sizing: border-box !important;
+      width: var(--checkbox-size, 16px) !important;
+      height: var(--checkbox-size, 16px) !important;
+      background-color: #{{ surface0.hex }} !important;
+      border: 1px solid #{{ surface2.hex }} !important;
+      border-radius: 4px !important;
+    }
+
+    input[type="checkbox"]:hover {
+      border-color: #{{ overlay0.hex }} !important;
+    }
+
+    input[type="checkbox"]:checked {
+      background-color: #{{ palette[accent].hex }} !important;
+      border-color: #{{ palette[accent].hex }} !important;
+      background-image: url("chrome://global/skin/icons/check.svg") !important;
+      -moz-context-properties: fill !important;
+      fill: #{{ crust.hex }} !important;
+      background-position: center !important;
+      background-size: 12px 12px !important;
+      background-repeat: no-repeat !important;
+    }
+
+    input[type="checkbox"]:disabled {
+      opacity: 0.5 !important;
+    }
   }
 
   /* Variables and styles specific to about:newtab and about:home */
   @-moz-document url("about:newtab"), url("about:home") {
 
-    :root {
+    :root, :host {
       --newtab-background-color: #{{ base.hex }} !important;
       --newtab-background-color-secondary: #{{ surface0.hex }} !important;
       --newtab-element-hover-color: #{{ surface0.hex }} !important;
@@ -70,9 +218,15 @@ whiskers:
     }
   }
 
+  @-moz-document url-prefix("about:config") {
+    #toolbar {
+      background-color: #{{ base.hex }} !important;
+    }
+  }
+
   /* Variables and styles specific to about:preferences */
   @-moz-document url-prefix("about:preferences") {
-    :root {
+    :root, :host {
       --zen-colors-tertiary: #{{ mantle.hex }} !important;
       --in-content-text-color: #{{ text.hex }} !important;
       --link-color: #{{ palette[accent].hex }} !important;
@@ -80,10 +234,38 @@ whiskers:
       --zen-colors-primary: #{{ surface0.hex }} !important;
       --in-content-box-background: #{{ surface0.hex }} !important;
       --zen-primary-color: #{{ palette[accent].hex }} !important;
+
+      --promo-background-color: #{{ surface0.hex }} !important;
+      --input-text-background-color: #{{ surface0.hex }} !important;
+      --background-color-box: #{{ surface0.hex }} !important;
+      --background-color-canvas: #{{ base.hex }} !important;
+      --background-color-box-info: #{{ mantle.hex }} !important;
+      --table-row-background-color: #{{ crust.hex }} !important;
+      --table-row-background-color-alternate: #{{ base.hex }} !important;
+    }
+
+    /* Text fields, including "Find in Settings", match the Base page background */
+    #input {
+      background-color: #{{ base.hex }} !important;
+    }
+
+    .container {
+      background-color: #{{ surface0.hex }} !important;
+    }
+
+    /* Cards are Mantle; rows inside them match the card and light up on hover */
+    button:has(> img.nav-icon) {
+      background: #{{ mantle.hex }} !important;
+    }
+
+    button:has(> img.nav-icon):hover {
+      background: #{{ surface0.hex }} !important;
     }
 
     groupbox , moz-card{
-      background: #{{ base.hex }} !important;
+      background: #{{ mantle.hex }} !important;
+      padding: 1.6rem !important;
+      border-radius: 8px !important;
     }
 
     button,
@@ -93,52 +275,111 @@ whiskers:
     }
 
     .main-content {
-      background-color: #{{ crust.hex }} !important;
+      background-color: #{{ base.hex }} !important;
     }
 
     .identity-color-blue {
-      --identity-tab-color: #8aadf4 !important;
-      --identity-icon-color: #8aadf4 !important;
+      --identity-tab-color: #{{ blue.hex }} !important;
+      --identity-icon-color: #{{ blue.hex }} !important;
     }
 
     .identity-color-turquoise {
-      --identity-tab-color: #8bd5ca !important;
-      --identity-icon-color: #8bd5ca !important;
+      --identity-tab-color: #{{ teal.hex }} !important;
+      --identity-icon-color: #{{ teal.hex }} !important;
     }
 
     .identity-color-green {
-      --identity-tab-color: #a6da95 !important;
-      --identity-icon-color: #a6da95 !important;
+      --identity-tab-color: #{{ green.hex }} !important;
+      --identity-icon-color: #{{ green.hex }} !important;
     }
 
     .identity-color-yellow {
-      --identity-tab-color: #eed49f !important;
-      --identity-icon-color: #eed49f !important;
+      --identity-tab-color: #{{ yellow.hex }} !important;
+      --identity-icon-color: #{{ yellow.hex }} !important;
     }
 
     .identity-color-orange {
-      --identity-tab-color: #f5a97f !important;
-      --identity-icon-color: #f5a97f !important;
+      --identity-tab-color: #{{ peach.hex }} !important;
+      --identity-icon-color: #{{ peach.hex }} !important;
     }
 
     .identity-color-red {
-      --identity-tab-color: #ed8796 !important;
-      --identity-icon-color: #ed8796 !important;
+      --identity-tab-color: #{{ red.hex }} !important;
+      --identity-icon-color: #{{ red.hex }} !important;
     }
 
     .identity-color-pink {
-      --identity-tab-color: #f5bde6 !important;
-      --identity-icon-color: #f5bde6 !important;
+      --identity-tab-color: #{{ pink.hex }} !important;
+      --identity-icon-color: #{{ pink.hex }} !important;
     }
 
     .identity-color-purple {
-      --identity-tab-color: #c6a0f6 !important;
-      --identity-icon-color: #c6a0f6 !important;
+      --identity-tab-color: #{{ mauve.hex }} !important;
+      --identity-icon-color: #{{ mauve.hex }} !important;
+    }
+  }
+
+  /* about:config and about:support share the same table/button treatment */
+  @-moz-document url("about:config"), url("about:support") {
+    button {
+      background-color: #{{ surface0.hex }} !important;
+      color: #{{ text.hex }} !important;
+    }
+
+    button:hover {
+      background-color: #{{ surface1.hex }} !important;
+    }
+
+    button:hover:active {
+      background-color: #{{ surface2.hex }} !important;
+    }
+
+    a {
+      color: #{{ palette[accent].hex }} !important;
+    }
+  }
+
+  /* Static document pages ship their own white/black styles */
+  @-moz-document url("about:rights"), url("about:license"), url("about:credits") {
+    html,
+    body {
+      background-color: #{{ base.hex }} !important;
+      color: #{{ text.hex }} !important;
+    }
+
+    a {
+      color: #{{ palette[accent].hex }} !important;
+    }
+  }
+
+  /* Variables and styles specific to about:config */
+  @-moz-document url("about:config") {
+    #about-config-search {
+      background-color: #{{ base.hex }} !important;
+    }
+  }
+
+  /* Variables and styles specific to about:support */
+  @-moz-document url("about:support") {
+    :root {
+      --table-header-background-color: #{{ surface0.hex }} !important;
+      --table-header-text-color: #{{ text.hex }} !important;
+    }
+
+    th {
+      background-color: #{{ surface0.hex }} !important;
+      color: #{{ text.hex }} !important;
     }
   }
 
   /* Variables and styles specific to about:addons */
   @-moz-document url-prefix("about:addons") {
+    .main-search,
+    .main-heading,
+    .sticky-container {
+      background-color: #{{ base.hex }} !important;
+    }
+
     :root {
       --zen-dark-color-mix-base: #{{ mantle.hex }} !important;
       --background-color-box: #{{ base.hex }} !important;

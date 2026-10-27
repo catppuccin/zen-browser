@@ -4,21 +4,169 @@
 
   /* Common variables affecting all pages */
   @-moz-document url-prefix("about:") {
-    :root {
+    :root, :host {
       --in-content-page-color: #cdd6f4 !important;
+      --text-color: #cdd6f4 !important;
+      --input-text-color: #cdd6f4 !important;
+      --button-text-color: #cdd6f4 !important;
+      --text-color-list-item-hover: #cdd6f4 !important;
+      --card-header-text-color: #cdd6f4 !important;
+      --card-header-text-color-hover: #cdd6f4 !important;
+      --card-header-text-color-active: #cdd6f4 !important;
+      --icon-color: #cdd6f4 !important;
+      --text-color-accent-primary-selected: #11111b !important;
       --color-accent-primary: #89b4fa !important;
       --color-accent-primary-hover: rgb(163, 197, 251) !important;
       --color-accent-primary-active: rgb(138, 153, 250) !important;
       background-color: #1e1e2e !important;
       --in-content-page-background: #1e1e2e !important;
+      --promo-background-color: #313244 !important;
+      --input-text-background-color: #313244 !important;
+      --background-color-box: #313244 !important;
+      --background-color-canvas: #11111b !important;
+      --background-color-box-info: #11111b !important;
+      --table-row-background-color: #181825 !important;
+      --table-row-background-color-alternate: #1e1e2e !important;
+
+      --link-color: #89b4fa !important;
+      --link-color-hover: rgb(163, 197, 251) !important;
+      --table-background-color: #181825 !important;
+
+      /* Buttons */
+      --button-background-color: #313244 !important;
+      --button-background-color-hover: #45475a !important;
+      --button-background-color-active: #585b70 !important;
+      --in-content-button-background: #313244 !important;
+      --in-content-button-background-hover: #45475a !important;
+      --in-content-button-background-active: #585b70 !important;
+      --in-content-primary-button-background: #89b4fa !important;
+      --in-content-primary-button-background-hover: rgb(163, 197, 251) !important;
+      --in-content-primary-button-background-active: rgb(138, 153, 250) !important;
+      --in-content-primary-button-text-color: #11111b !important;
+      --in-content-primary-button-text-color-hover: #11111b !important;
+      --in-content-primary-button-text-color-active: #11111b !important;
+
+      /* Selected and hovered items (category lists, rows) */
+      --in-content-item-selected: #313244 !important;
+      --in-content-item-hover: #313244 !important;
+      --in-content-item-hover-text: #cdd6f4 !important;
+      --in-content-item-selected-text: #cdd6f4 !important;
+
+      /* Panels and focused fields */
+      --panel-background-color: #1e1e2e !important;
+      --toolbar-field-background-color-focus: #1e1e2e !important;
+
+      /* Firefox View */
+      --fxview-background-color: #1e1e2e !important;
+      --fxview-background-color-secondary: #181825 !important;
+      --fxview-element-background-hover: #313244 !important;
+      --fxview-element-background-active: #45475a !important;
+      --newtab-background-color: #1e1e2e !important;
+
+      /* Borders and separators (hr) */
+      --border-color: #45475a !important;
+      --border-color-deemphasized: #45475a !important;
+      --border-color-interactive: #585b70 !important;
+      --border-color-interactive-hover: #6c7086 !important;
+      --border-color-interactive-active: #7f849c !important;
+      --border-color-interactive-disabled: #45475a !important;
+      --border-color-selected: #89b4fa !important;
+      --card-border-color: #45475a !important;
+      --info-bar-border-color: #45475a !important;
+      --table-border-color: #45475a !important;
+      --input-border-color: #585b70 !important;
+      --zen-input-border-color: #585b70 !important;
+      --input-text-border-color: #585b70 !important;
+      --input-text-border-color-disabled: #45475a !important;
+      --panel-border-color: #585b70 !important;
+      --popup-border-color: #585b70 !important;
+      --panel-separator-color: #45475a !important;
+      --sidebar-border-color: #45475a !important;
     }
 
+  }
+
+  /* Page nav logo (Settings, Add-ons, ...) */
+  @-moz-document url-prefix("about:") {
+    /* The page nav logo is a branding PNG inside the nav's shadow DOM, so cover it with an accent-colored ring */
+    moz-page-nav::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      left: 7.25px;
+      top: 65.5px;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      pointer-events: none;
+      background:
+        radial-gradient(
+          circle at center,
+          transparent 0 2.66px,
+          #89b4fa 2.66px 3.39px,
+          transparent 3.39px 4.67px,
+          #89b4fa 4.67px 5.87px,
+          transparent 5.87px 7.15px,
+          #89b4fa 7.15px 8.8px,
+          transparent 8.8px
+        ),
+        #1e1e2e;
+    }
+  }
+
+  /* Page nav buttons (Settings, Add-ons, Debugging, Policies, ...) */
+  @-moz-document url-prefix("about:") {
+    button:has(> img.page-nav-icon) {
+      background: #1e1e2e !important;
+    }
+
+    button:has(> img.page-nav-icon):hover,
+    button:has(> img.page-nav-icon)[selected] {
+      background: #313244 !important;
+    }
+
+    button:has(> img.page-nav-icon):hover:active {
+      background: #45475a !important;
+    }
+  }
+
+  /* Checkboxes: palette background, accent when checked */
+  @-moz-document url-prefix("about:") {
+    input[type="checkbox"] {
+      appearance: none !important;
+      -moz-appearance: none !important;
+      box-sizing: border-box !important;
+      width: var(--checkbox-size, 16px) !important;
+      height: var(--checkbox-size, 16px) !important;
+      background-color: #313244 !important;
+      border: 1px solid #585b70 !important;
+      border-radius: 4px !important;
+    }
+
+    input[type="checkbox"]:hover {
+      border-color: #6c7086 !important;
+    }
+
+    input[type="checkbox"]:checked {
+      background-color: #89b4fa !important;
+      border-color: #89b4fa !important;
+      background-image: url("chrome://global/skin/icons/check.svg") !important;
+      -moz-context-properties: fill !important;
+      fill: #11111b !important;
+      background-position: center !important;
+      background-size: 12px 12px !important;
+      background-repeat: no-repeat !important;
+    }
+
+    input[type="checkbox"]:disabled {
+      opacity: 0.5 !important;
+    }
   }
 
   /* Variables and styles specific to about:newtab and about:home */
   @-moz-document url("about:newtab"), url("about:home") {
 
-    :root {
+    :root, :host {
       --newtab-background-color: #1e1e2e !important;
       --newtab-background-color-secondary: #313244 !important;
       --newtab-element-hover-color: #313244 !important;
@@ -60,9 +208,15 @@
     }
   }
 
+  @-moz-document url-prefix("about:config") {
+    #toolbar {
+      background-color: #1e1e2e !important;
+    }
+  }
+
   /* Variables and styles specific to about:preferences */
   @-moz-document url-prefix("about:preferences") {
-    :root {
+    :root, :host {
       --zen-colors-tertiary: #181825 !important;
       --in-content-text-color: #cdd6f4 !important;
       --link-color: #89b4fa !important;
@@ -70,10 +224,38 @@
       --zen-colors-primary: #313244 !important;
       --in-content-box-background: #313244 !important;
       --zen-primary-color: #89b4fa !important;
+
+      --promo-background-color: #313244 !important;
+      --input-text-background-color: #313244 !important;
+      --background-color-box: #313244 !important;
+      --background-color-canvas: #1e1e2e !important;
+      --background-color-box-info: #181825 !important;
+      --table-row-background-color: #11111b !important;
+      --table-row-background-color-alternate: #1e1e2e !important;
+    }
+
+    /* Text fields, including "Find in Settings", match the Base page background */
+    #input {
+      background-color: #1e1e2e !important;
+    }
+
+    .container {
+      background-color: #313244 !important;
+    }
+
+    /* Cards are Mantle; rows inside them match the card and light up on hover */
+    button:has(> img.nav-icon) {
+      background: #181825 !important;
+    }
+
+    button:has(> img.nav-icon):hover {
+      background: #313244 !important;
     }
 
     groupbox , moz-card{
-      background: #1e1e2e !important;
+      background: #181825 !important;
+      padding: 1.6rem !important;
+      border-radius: 8px !important;
     }
 
     button,
@@ -83,52 +265,111 @@
     }
 
     .main-content {
-      background-color: #11111b !important;
+      background-color: #1e1e2e !important;
     }
 
     .identity-color-blue {
-      --identity-tab-color: #8aadf4 !important;
-      --identity-icon-color: #8aadf4 !important;
+      --identity-tab-color: #89b4fa !important;
+      --identity-icon-color: #89b4fa !important;
     }
 
     .identity-color-turquoise {
-      --identity-tab-color: #8bd5ca !important;
-      --identity-icon-color: #8bd5ca !important;
+      --identity-tab-color: #94e2d5 !important;
+      --identity-icon-color: #94e2d5 !important;
     }
 
     .identity-color-green {
-      --identity-tab-color: #a6da95 !important;
-      --identity-icon-color: #a6da95 !important;
+      --identity-tab-color: #a6e3a1 !important;
+      --identity-icon-color: #a6e3a1 !important;
     }
 
     .identity-color-yellow {
-      --identity-tab-color: #eed49f !important;
-      --identity-icon-color: #eed49f !important;
+      --identity-tab-color: #f9e2af !important;
+      --identity-icon-color: #f9e2af !important;
     }
 
     .identity-color-orange {
-      --identity-tab-color: #f5a97f !important;
-      --identity-icon-color: #f5a97f !important;
+      --identity-tab-color: #fab387 !important;
+      --identity-icon-color: #fab387 !important;
     }
 
     .identity-color-red {
-      --identity-tab-color: #ed8796 !important;
-      --identity-icon-color: #ed8796 !important;
+      --identity-tab-color: #f38ba8 !important;
+      --identity-icon-color: #f38ba8 !important;
     }
 
     .identity-color-pink {
-      --identity-tab-color: #f5bde6 !important;
-      --identity-icon-color: #f5bde6 !important;
+      --identity-tab-color: #f5c2e7 !important;
+      --identity-icon-color: #f5c2e7 !important;
     }
 
     .identity-color-purple {
-      --identity-tab-color: #c6a0f6 !important;
-      --identity-icon-color: #c6a0f6 !important;
+      --identity-tab-color: #cba6f7 !important;
+      --identity-icon-color: #cba6f7 !important;
+    }
+  }
+
+  /* about:config and about:support share the same table/button treatment */
+  @-moz-document url("about:config"), url("about:support") {
+    button {
+      background-color: #313244 !important;
+      color: #cdd6f4 !important;
+    }
+
+    button:hover {
+      background-color: #45475a !important;
+    }
+
+    button:hover:active {
+      background-color: #585b70 !important;
+    }
+
+    a {
+      color: #89b4fa !important;
+    }
+  }
+
+  /* Static document pages ship their own white/black styles */
+  @-moz-document url("about:rights"), url("about:license"), url("about:credits") {
+    html,
+    body {
+      background-color: #1e1e2e !important;
+      color: #cdd6f4 !important;
+    }
+
+    a {
+      color: #89b4fa !important;
+    }
+  }
+
+  /* Variables and styles specific to about:config */
+  @-moz-document url("about:config") {
+    #about-config-search {
+      background-color: #1e1e2e !important;
+    }
+  }
+
+  /* Variables and styles specific to about:support */
+  @-moz-document url("about:support") {
+    :root {
+      --table-header-background-color: #313244 !important;
+      --table-header-text-color: #cdd6f4 !important;
+    }
+
+    th {
+      background-color: #313244 !important;
+      color: #cdd6f4 !important;
     }
   }
 
   /* Variables and styles specific to about:addons */
   @-moz-document url-prefix("about:addons") {
+    .main-search,
+    .main-heading,
+    .sticky-container {
+      background-color: #1e1e2e !important;
+    }
+
     :root {
       --zen-dark-color-mix-base: #181825 !important;
       --background-color-box: #1e1e2e !important;

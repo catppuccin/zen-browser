@@ -11,7 +11,10 @@ whiskers:
 /* Catppuccin {{flavor.identifier | capitalize}} {{accent | capitalize}} userChrome.css*/
 
 @media (prefers-color-scheme: {{ if(cond=flavor.dark, t="dark", f="light") }}) {
-  :root {
+  :root,
+  :host,
+  :host *, :root *, *, * *,
+  .container, .sticky-container, #toolbar, #prefs {
     --zen-colors-primary: #{{ surface0.hex }} !important;
     --zen-primary-color: #{{ palette[accent].hex }} !important;
     --zen-colors-secondary: #{{ surface0.hex }} !important;
@@ -26,18 +29,53 @@ whiskers:
     --newtab-text-primary-color: #{{ text.hex }} !important;
     --arrowpanel-color: #{{ text.hex }} !important;
     --arrowpanel-background: #{{ base.hex }} !important;
+    --zen-dialog-background: #{{ base.hex }} !important;
     --sidebar-text-color: #{{ text.hex }} !important;
     --lwt-sidebar-text-color: #{{ text.hex }} !important;
     --lwt-sidebar-background-color: #{{ crust.hex }} !important;
-    --toolbar-bgcolor: #{{ surface0.hex }} !important;
+    --toolbar-bgcolor: #{{ mantle.hex }} !important;
     --newtab-background-color: #{{ base.hex }} !important;
     --zen-themed-toolbar-bg: #{{ mantle.hex }} !important;
     --zen-main-browser-background: #{{ mantle.hex }} !important;
     --toolbox-bgcolor-inactive: #{{ mantle.hex }} !important;
+    --zen-themed-toolbar-bg-transparent: #{{ mantle.hex }} !important;
+    --zen-branding-bg: #{{ base.hex }} !important;
+    --urlbarview-separator-color: #{{ surface0.hex }} !important;
+    --toolbarbutton-hover-background: #{{ surface0.hex }} !important;
+    --toolbarbutton-active-background: #{{ surface1.hex }} !important;
+    --toolbarbutton-background-color-hover: #{{ surface0.hex }} !important;
+    --toolbarbutton-background-color-active: #{{ surface1.hex }} !important;
+    --zen-toolbar-element-bg-hover: #{{ surface0.hex }} !important;
+  }
+
+  #tabs-newtab-button,
+  #tabs-newtab-button:hover,
+  #vertical-tabs-newtab-button,
+  #vertical-tabs-newtab-button:hover {
+    background-color: transparent !important;
+    color: #{{ text.hex }} !important;
+    --toolbarbutton-icon-fill: #{{ text.hex }} !important;
+  }
+
+  #tabs-newtab-button .toolbarbutton-icon,
+  #vertical-tabs-newtab-button .toolbarbutton-icon {
+    fill: #{{ text.hex }} !important;
+    color: #{{ text.hex }} !important;
+  }
+
+  #tabs-newtab-button .toolbarbutton-text,
+  #vertical-tabs-newtab-button .toolbarbutton-text {
+    color: #{{ text.hex }} !important;
+    opacity: 1 !important;
   }
 
   #permissions-granted-icon {
     color: #{{ mantle.hex }} !important;
+  }
+
+  #historySwipeAnimationPreviousArrow,#historySwipeAnimationNextArrow {
+    --swipe-nav-icon-primary-color: #{{ palette[accent].hex }} !important;
+    --swipe-nav-icon-accent-color: #{{ base.hex }}!important;
   }
 
   .sidebar-placesTree {
@@ -45,7 +83,7 @@ whiskers:
   }
 
   #zen-workspaces-button {
-    background-color: #{{ base.hex }} !important;
+    background-color: #{{ surface0.hex }} !important;
   }
 
   #TabsToolbar {
@@ -54,6 +92,38 @@ whiskers:
 
   .urlbar-background {
     background-color: #{{ base.hex }} !important;
+  }
+
+  /* Open (floating) address bar border and shadow */
+  #urlbar[breakout-extend] > .urlbar-background {
+    outline-color: #{{ surface1.hex }} !important;
+    box-shadow: 0 30px 140px -15px {{ crust | mod(opacity=0.6) | css_rgba }} !important;
+  }
+
+  /* Placeholder left in the toolbar while the address bar is open */
+  #urlbar-container:has(#urlbar[breakout-extend]) {
+    background-color: #{{ base.hex }} !important;
+  }
+
+  /* Window controls */
+  .titlebar-button .toolbarbutton-icon {
+    background-color: #{{ base.hex }} !important;
+    fill: #{{ text.hex }} !important;
+    color: #{{ text.hex }} !important;
+  }
+
+  .titlebar-button:hover .toolbarbutton-icon {
+    background-color: #{{ surface0.hex }} !important;
+  }
+
+  .titlebar-button:hover:active .toolbarbutton-icon {
+    background-color: #{{ surface1.hex }} !important;
+  }
+
+  .titlebar-close:hover .toolbarbutton-icon {
+    background-color: #{{ red.hex }} !important;
+    fill: #{{ crust.hex }} !important;
+    color: #{{ crust.hex }} !important;
   }
 
   .content-shortcuts {
@@ -85,7 +155,7 @@ whiskers:
           .toolbarbutton-text,
           .toolbarbutton-badge-stack
         ) {
-        fill: #{{ crust.hex }};
+        fill: #{{ palette[accent].hex }} !important;
       }
     }
   }
@@ -130,11 +200,109 @@ whiskers:
     --identity-icon-color: #{{ mauve.hex }} !important;
   }
 
-  hbox#titlebar {
-    background-color: #{{ mantle.hex }} !important;
+  #navigator-toolbox {
+    --zen-main-browser-background-toolbar: #{{ mantle.hex }} !important;
   }
 
   #zen-appcontent-navbar-container {
     background-color: #{{ mantle.hex }} !important;
+  }
+
+  #commonDialog {
+    background-color: #{{ base.hex }} !important;
+  }
+
+  #zen-toast-container .zen-toast label,
+  #zen-toast-container .zen-toast button .button-icon,
+  #urlbar-search-mode-indicator,
+  .urlbarView .urlbarView-row[selected] *,
+  .urlbarView .urlbarView-row[selected] .urlbarView-title-separator::before {
+    color: #{{ base.hex }} !important;
+  }
+
+  /* Floating sidebar/toolbar in compact mode */
+  .zen-toolbar-background {
+    background: #{{ mantle.hex }} !important;
+  }
+
+  .zen-toolbar-background::before,
+  .zen-toolbar-background::after {
+    outline-color: #{{ surface0.hex }} !important;
+  }
+
+  #titlebar,
+  hbox#titlebar {
+    background-color: #{{ mantle.hex }} !important;
+    border-radius: 12px !important;
+  }
+
+  #zen-browser-background {
+    --zen-main-browser-background: #{{ mantle.hex }} !important;
+    --zen-main-browser-background-old: #{{ mantle.hex }} !important;
+  }
+
+  /* Zen Twilight applies system acrylic/blur via `appearance` on the wrappers,
+   * which lets the window background bleed through the gaps between panels.
+   */
+  #zen-main-app-wrapper,
+  #zen-appcontent-wrapper,
+  #zen-sidebar-splitter,
+  #zen-browser-background {
+    appearance: unset !important;
+    -moz-default-appearance: none !important;
+  }
+
+  #zen-main-app-wrapper,
+  #zen-appcontent-wrapper,
+  #zen-browser-background {
+    background-color: #{{ mantle.hex }} !important;
+  }
+
+  #zen-sidebar-splitter {
+    background-color: #{{ mantle.hex }} !important;
+  }
+
+  /* Zen library: replace its hard-coded white/black alpha colors */
+  zen-library {
+    --zen-library-pill-bg: #{{ surface0.hex }} !important;
+    --zen-library-pill-hover-bg: #{{ surface1.hex }} !important;
+  }
+
+  #zen-library-side {
+    background: #{{ mantle.hex }} !important;
+    box-shadow: none !important;
+  }
+
+  .zen-library-tab-toggle {
+    background: #{{ surface0.hex }} !important;
+  }
+
+  .zen-library-tab-toggle:hover {
+    background: #{{ surface1.hex }} !important;
+  }
+
+  /* Content surface: Base, never Zen's translucent white tint over Mantle */
+  #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer {
+    --zen-transparent-browser-background: #{{ base.hex }} !important;
+  }
+
+  #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer browser[type="content"]:not([transparent="true"]) {
+    background: #{{ base.hex }} !important;
+  }
+
+  .zen-library-space {
+    background: #{{ base.hex }} !important;
+  }
+
+  .zen-library-space::before {
+    background: none !important;
+  }
+
+  .zen-library-media-opt-in {
+    background: #{{ base.hex }} !important;
+  }
+
+  .zen-library-row-actions moz-toggle {
+    --toggle-dot-background-color: #{{ text.hex }} !important;
   }
 }

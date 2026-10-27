@@ -1,7 +1,10 @@
 /* Catppuccin Macchiato Pink userChrome.css*/
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root,
+  :host,
+  :host *, :root *, *, * *,
+  .container, .sticky-container, #toolbar, #prefs {
     --zen-colors-primary: #363a4f !important;
     --zen-primary-color: #f5bde6 !important;
     --zen-colors-secondary: #363a4f !important;
@@ -16,18 +19,53 @@
     --newtab-text-primary-color: #cad3f5 !important;
     --arrowpanel-color: #cad3f5 !important;
     --arrowpanel-background: #24273a !important;
+    --zen-dialog-background: #24273a !important;
     --sidebar-text-color: #cad3f5 !important;
     --lwt-sidebar-text-color: #cad3f5 !important;
     --lwt-sidebar-background-color: #181926 !important;
-    --toolbar-bgcolor: #363a4f !important;
+    --toolbar-bgcolor: #1e2030 !important;
     --newtab-background-color: #24273a !important;
     --zen-themed-toolbar-bg: #1e2030 !important;
     --zen-main-browser-background: #1e2030 !important;
     --toolbox-bgcolor-inactive: #1e2030 !important;
+    --zen-themed-toolbar-bg-transparent: #1e2030 !important;
+    --zen-branding-bg: #24273a !important;
+    --urlbarview-separator-color: #363a4f !important;
+    --toolbarbutton-hover-background: #363a4f !important;
+    --toolbarbutton-active-background: #494d64 !important;
+    --toolbarbutton-background-color-hover: #363a4f !important;
+    --toolbarbutton-background-color-active: #494d64 !important;
+    --zen-toolbar-element-bg-hover: #363a4f !important;
+  }
+
+  #tabs-newtab-button,
+  #tabs-newtab-button:hover,
+  #vertical-tabs-newtab-button,
+  #vertical-tabs-newtab-button:hover {
+    background-color: transparent !important;
+    color: #cad3f5 !important;
+    --toolbarbutton-icon-fill: #cad3f5 !important;
+  }
+
+  #tabs-newtab-button .toolbarbutton-icon,
+  #vertical-tabs-newtab-button .toolbarbutton-icon {
+    fill: #cad3f5 !important;
+    color: #cad3f5 !important;
+  }
+
+  #tabs-newtab-button .toolbarbutton-text,
+  #vertical-tabs-newtab-button .toolbarbutton-text {
+    color: #cad3f5 !important;
+    opacity: 1 !important;
   }
 
   #permissions-granted-icon {
     color: #1e2030 !important;
+  }
+
+  #historySwipeAnimationPreviousArrow,#historySwipeAnimationNextArrow {
+    --swipe-nav-icon-primary-color: #f5bde6 !important;
+    --swipe-nav-icon-accent-color: #24273a!important;
   }
 
   .sidebar-placesTree {
@@ -35,7 +73,7 @@
   }
 
   #zen-workspaces-button {
-    background-color: #24273a !important;
+    background-color: #363a4f !important;
   }
 
   #TabsToolbar {
@@ -44,6 +82,38 @@
 
   .urlbar-background {
     background-color: #24273a !important;
+  }
+
+  /* Open (floating) address bar border and shadow */
+  #urlbar[breakout-extend] > .urlbar-background {
+    outline-color: #494d64 !important;
+    box-shadow: 0 30px 140px -15px rgba(24, 25, 38, 0.60) !important;
+  }
+
+  /* Placeholder left in the toolbar while the address bar is open */
+  #urlbar-container:has(#urlbar[breakout-extend]) {
+    background-color: #24273a !important;
+  }
+
+  /* Window controls */
+  .titlebar-button .toolbarbutton-icon {
+    background-color: #24273a !important;
+    fill: #cad3f5 !important;
+    color: #cad3f5 !important;
+  }
+
+  .titlebar-button:hover .toolbarbutton-icon {
+    background-color: #363a4f !important;
+  }
+
+  .titlebar-button:hover:active .toolbarbutton-icon {
+    background-color: #494d64 !important;
+  }
+
+  .titlebar-close:hover .toolbarbutton-icon {
+    background-color: #ed8796 !important;
+    fill: #181926 !important;
+    color: #181926 !important;
   }
 
   .content-shortcuts {
@@ -75,7 +145,7 @@
           .toolbarbutton-text,
           .toolbarbutton-badge-stack
         ) {
-        fill: #181926;
+        fill: #f5bde6 !important;
       }
     }
   }
@@ -120,11 +190,109 @@
     --identity-icon-color: #c6a0f6 !important;
   }
 
-  hbox#titlebar {
-    background-color: #1e2030 !important;
+  #navigator-toolbox {
+    --zen-main-browser-background-toolbar: #1e2030 !important;
   }
 
   #zen-appcontent-navbar-container {
     background-color: #1e2030 !important;
+  }
+
+  #commonDialog {
+    background-color: #24273a !important;
+  }
+
+  #zen-toast-container .zen-toast label,
+  #zen-toast-container .zen-toast button .button-icon,
+  #urlbar-search-mode-indicator,
+  .urlbarView .urlbarView-row[selected] *,
+  .urlbarView .urlbarView-row[selected] .urlbarView-title-separator::before {
+    color: #24273a !important;
+  }
+
+  /* Floating sidebar/toolbar in compact mode */
+  .zen-toolbar-background {
+    background: #1e2030 !important;
+  }
+
+  .zen-toolbar-background::before,
+  .zen-toolbar-background::after {
+    outline-color: #363a4f !important;
+  }
+
+  #titlebar,
+  hbox#titlebar {
+    background-color: #1e2030 !important;
+    border-radius: 12px !important;
+  }
+
+  #zen-browser-background {
+    --zen-main-browser-background: #1e2030 !important;
+    --zen-main-browser-background-old: #1e2030 !important;
+  }
+
+  /* Zen Twilight applies system acrylic/blur via `appearance` on the wrappers,
+   * which lets the window background bleed through the gaps between panels.
+   */
+  #zen-main-app-wrapper,
+  #zen-appcontent-wrapper,
+  #zen-sidebar-splitter,
+  #zen-browser-background {
+    appearance: unset !important;
+    -moz-default-appearance: none !important;
+  }
+
+  #zen-main-app-wrapper,
+  #zen-appcontent-wrapper,
+  #zen-browser-background {
+    background-color: #1e2030 !important;
+  }
+
+  #zen-sidebar-splitter {
+    background-color: #1e2030 !important;
+  }
+
+  /* Zen library: replace its hard-coded white/black alpha colors */
+  zen-library {
+    --zen-library-pill-bg: #363a4f !important;
+    --zen-library-pill-hover-bg: #494d64 !important;
+  }
+
+  #zen-library-side {
+    background: #1e2030 !important;
+    box-shadow: none !important;
+  }
+
+  .zen-library-tab-toggle {
+    background: #363a4f !important;
+  }
+
+  .zen-library-tab-toggle:hover {
+    background: #494d64 !important;
+  }
+
+  /* Content surface: Base, never Zen's translucent white tint over Mantle */
+  #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer {
+    --zen-transparent-browser-background: #24273a !important;
+  }
+
+  #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer browser[type="content"]:not([transparent="true"]) {
+    background: #24273a !important;
+  }
+
+  .zen-library-space {
+    background: #24273a !important;
+  }
+
+  .zen-library-space::before {
+    background: none !important;
+  }
+
+  .zen-library-media-opt-in {
+    background: #24273a !important;
+  }
+
+  .zen-library-row-actions moz-toggle {
+    --toggle-dot-background-color: #cad3f5 !important;
   }
 }
